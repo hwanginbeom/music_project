@@ -13,11 +13,27 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path,include
+from musicApp.views import *
+# from musicApp.views import KakaoToDjangoLogin
+
+from webserver import views
 
 urlpatterns = [
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
-    path('greeting/', include('musicApp.urls'))
+    path('musicApp/', include('musicApp.urls')),
+ # 로그인
+    path('account/', include('rest_auth.urls')),
+    path('account/registration/', include('rest_auth.registration.urls')),
+    path('account/', include('allauth.urls')),
+    # url(r'account/registration/confirm-email/(?P<key>.+)/$', confirm_email, name='confirm_email'),
+    path('', include('django.contrib.auth.urls')),
 
+    # 소셜 로그인
+    path('account/login/kakao/', kakao_login, name='kakao_login'),
+    path('account/login/kakao/callback/', kakao_callback, name='kakao_callback'),
+    path('account/login/kakao/todjango', KakaoToDjangoLogin, name='kakao_todjango_login'),
 ]

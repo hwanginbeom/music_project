@@ -7,5 +7,6 @@ urlpatterns = [
     path('hi/', views.hi),
     path('login/', views.login, name='login'),
     path('wow/', views.wow, name='wow'),
+    path('popup/', views.popup, name='popup'),
 
 ]
