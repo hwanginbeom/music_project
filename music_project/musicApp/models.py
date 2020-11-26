@@ -5,7 +5,7 @@ class SongMeta(models.Model):
     song_id = models.IntegerField(primary_key=True)
     album_id = models.IntegerField(blank=True, null=True)
     album_name = models.CharField(max_length=200, blank=True, null=True)
-    aritst_id_basket = models.CharField(max_length=200, blank=True, null=True)
+    artist_id_basket = models.CharField(max_length=200, blank=True, null=True)
     artist_name_basket = models.CharField(max_length=200, blank=True, null=True)
     song_name = models.CharField(max_length=200, blank=True, null=True)
     song_gn_gnr_basket = models.CharField(max_length=200, blank=True, null=True)

@@ -54,35 +54,33 @@
 				<section class="wrapper style1">
 					<div class="inner">
 						<header class="align-center">
-							<h2>Nam eu nisi non ante sodale</h2>
-							<p>Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.</p>
+							<h2>혜수 수정</h2>
+							<p>다들 화이팅..!</p>
 						</header>
 						<!-- 2 Column Video Section -->
+
 							<div class="flex flex-2">
+								{% for obj in idx %}
 								<div class="video col">
 									<div class="image fit">
-										<img src="{% static 'images/pic07.jpg' %}" alt="" />
+										<a href="{{ obj.url_link }}" target="_blank"><img src="{{ obj.album_image }}" alt="" /></a>
 										<div class="arrow">
 											<div class="icon fa-play"></div>
 										</div>
 									</div>
 									<p class="caption">
-										Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+
+										{{ obj.artist_name_basket }} - {{ obj.song_name }}
+
+
+
+
+
 									</p>
 									<a href="generic" class="link"><span>Click Me</span></a>
 								</div>
-								<div class="video col">
-									<div class="image fit">
-										<img src="{% static 'images/pic08.jpg' %}" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<p class="caption">
-										Morbi mattis ligula ut eros ipsum aliquam iaculis dictum suscipit
-									</p>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
+								{% endfor %}
+
 							</div>
 					</div>
 				</section>
