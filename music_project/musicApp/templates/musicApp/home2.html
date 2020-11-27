@@ -1,4 +1,4 @@
-<!--로그인 전 -->
+<!--로그인 후 -->
 
 {% load static %}
 <!--<!DOCTYPE HTML>-->
@@ -13,7 +13,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	</head>
@@ -30,11 +30,12 @@
 			<input type="search" id="search" placeholder="Search..." />
 			<button type="submit"><i class="fa fa-search"></i></button>
 			<div class="dropdown">
-				<button class="dropbtn"><i class="far fa-user"></i></button>
-				<div class="dropdown-content" style="text-align:center;">
-					<a href="#">로그인</a>
-				</div>
-			</div>
+            <button class="dropbtn"><i class="far fa-user"></i></button>
+            <div class="dropdown-content" style="text-align:center;">
+               <a href="mypage.html">마이페이지</a>
+                <a href="/log_out">로그아웃</a>
+            </div>
+         </div>
 			<a href="#menu"></a>
 		</header>
 
@@ -58,9 +59,9 @@
 					<div class="inner">
 						<header>
 							<h1>환영합니다 :D</h1>
-							<p>당신의 취향을 파악해 음악을 추천해주는 사이트입니다 !</p>
+							<p>정확한 음악 추천을 위해서 좋아하는 음악을 더 선택해주세요 !</p>
 						</header>
-						<a href="#">Login us</a>
+						<a href="selectmusic.html">Select Music</a>
 
 					</div>
 
@@ -73,8 +74,8 @@
 				<section class="wrapper ">
 					<div class="inner">
 						<header>
-							<h2>Top10 노래 추천</h2>
-							<p>사용자들이 좋아요 한 노래를 토대로 추천</p>
+							<h2>개인화 추천</h2>
+							<p>당신이 좋아요 한 노래를 토대로 개인화 추천</p>
 						</header>
 
 						<!-- 3 Column Video Section -->
@@ -123,8 +124,8 @@
 				<section class="wrapper style2">
 					<div class="inner">
 						<header>
-							<h2>Top3 장르 추천</h2>
-							<p>사용자들이 좋아요 한 노래를 토대로 추천</p>
+							<h2>개인 장르 추천</h2>
+							<p>당신이 좋아요 한 노래를 토대로 개인화 추천</p>
 						</header>
 						<!-- Tabbed Video Section -->
 							<div class="flex flex-tabs">
@@ -389,8 +390,8 @@
 				<section class="wrapper style2">
 					<div class="inner">
 						<header>
-							<h2>Top3 태그 추천</h2>
-							<p>사용자들이 좋아요 한 노래를 토대로 추천</p>
+							<h2>개인 태그 추천</h2>
+							<p>당신이 좋아요 한 노래를 토대로 개인화 추천</p>
 						</header>
 						<!-- Tabbed Video Section -->
 							<div class="flex flex-tabs">

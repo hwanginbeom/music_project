@@ -25,5 +25,13 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('generic/', views.generic, name='generic'),
     path('elements/', views.elements, name='elements'),
+    path('home1/', views.home1, name='home1'),
+    path('home2/', views.home2, name='home2'),
+    path('log_out/', views.log_out, name='log_out'),
+
+    # 소셜 로그인
+    path('account/login/kakao/', views.kakao_login, name='kakao_login'),
+    path('account/logout/kakao/', views.kakao_logout, name='kakao_logout'),
+    path('account/login/kakao/callback/', views.kakao_callback, name='kakao_callback'),
 
 ]
