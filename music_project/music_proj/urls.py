@@ -28,6 +28,7 @@ urlpatterns = [
     path('home1/', views.home1, name='home1'),
     path('home2/', views.home2, name='home2'),
     path('log_out/', views.log_out, name='log_out'),
+    path('hyesu/', views.hyesu, name='hyesu'),
 
     # 소셜 로그인
     path('account/login/kakao/', views.kakao_login, name='kakao_login'),

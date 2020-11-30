@@ -40,7 +40,20 @@ def index(request) :
     #            'song_gn_dtl_gnr_basket' : song_gn_dtl_gnr_basket, 'issue_date' : issue_date, 'url_link' : url_link,
     #            'album_image' : album_image, 'song_meta' : song_meta, 'idx' : idx}
     context = { 'idx' : idx }
-    return render(request, 'musicApp/index.html', context)
+    return render(request, 'musicApp/hyesu.html', context)
+
+def hyesu(request):
+    song_meta = SongMeta.objects.all()
+    # song = song_meta.filter(song_id = 0)
+
+    idx = []
+    for i, obj in enumerate(song_meta):
+        idx.append(obj)
+        if (i == 1):
+            break
+
+    context = {'idx': idx}
+    return render(request, 'musicApp/hyesu.html', context)
 
 def elements(request) :
     # context = {'ment' : '여기까지 잘되시나요?'}

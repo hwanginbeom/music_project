@@ -18,23 +18,24 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	</head>
 
+
 	<body>
 
-<!--		 Header -->
+	<!-- Header -->
 		<header id="header">
 			<h1>
 				<img src="{% static 'images/logo.png' %}" alt="Dung KKung">
 				<a href="#">Dung KKung</a>
 			</h1>
-
-			<input type="search" id="search" placeholder="Search..." />
-			<button type="submit"><i class="fa fa-search"></i></button>
+<!--			<input type="search" id="search" placeholder="Search..." />-->
+<!--			<button type="submit" id="searchicon"><i class="fa fa-search"></i></button>-->
 			<div class="dropdown">
 				<button class="dropbtn"><i class="far fa-user"></i></button>
 				<div class="dropdown-content" style="text-align:center;">
-					<a href="/account/login/kakao/">로그인</a>
+					<a onclick="document.getElementById('id01').style.display='block'" class="w3-button">로그인</a>
 				</div>
 			</div>
+			<button id="clickfooter"><i class="fa fa-music"></i></button>
 			<a href="#menu"></a>
 		</header>
 
@@ -43,623 +44,657 @@
 				<ul class="links">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="gerne.html">Genre</a></li>
-					<li><a href="situation.html">Playlist</a></li>
+					<li><a href="tag.html">Tag</a></li>
+					<li><a href="playlist.html">Playlist</a></li>
+					<li><a href="filter.html">Filter</a></li>
 					<li><a href="mypage.html">My page</a></li>
 				</ul>
 			</nav>
 
-			<!-- Banner -->
-			<!--
-				To use a video as your background, set data-video to the name of your video without
-				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
-				formats to work correctly.
-			-->
-				<section id="banner" data-video="images/banner">
-					<div class="inner">
-						<header>
-							<h1>환영합니다 :D</h1>
-							<p>당신의 취향을 파악해 음악을 추천해주는 사이트입니다 !</p>
-						</header>
-						<a href="#">Login us</a>
 
-					</div>
-
-				</section>
-
-		<!-- Main -->
-			<div id="main">
-
-			<!-- one -->
-				<section class="wrapper ">
-					<div class="inner">
-						<header>
-							<h2>Top10 노래 추천</h2>
-							<p>사용자들이 좋아요 한 노래를 토대로 추천</p>
-						</header>
-
-						<!-- 3 Column Video Section -->
-							<div class="flex flex-3">
-								<div class="video col">
-									<div class="image fit">
-										<img src="{% static 'images/pic09.jpg' %}" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<p class="caption">
-										Cras eget lacus sed mauris scelerisque tincidunt
-									</p>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<div class="video col">
-									<div class="image fit">
-										<img src="{% static 'images/pic10.jpg' %}" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<p class="caption">
-										Vivamus vulputate lacus non massa auctor lobortis
-									</p>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<div class="video col">
-									<div class="image fit">
-										<img src="{% static 'images/pic11.jpg' %}" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<p class="caption">
-										Nam eu nisi non ante sodales interdum a vitae neque
-									</p>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-							</div>
-					</div>
-				</section>
-
-			<!-- Two -->
-				<section class="wrapper style2">
-					<div class="inner">
-						<header>
-							<h2>Top3 장르 추천</h2>
-							<p>사용자들이 좋아요 한 노래를 토대로 추천</p>
-						</header>
-						<!-- Tabbed Video Section -->
-							<div class="flex flex-tabs">
-								<ul class="tab-list">
-									<li><a href="#" data-tab="tab-1" class="active">Duis vestibulum tellus</a></li>
-									<li><a href="#" data-tab="tab-2">Quam tempus sodales ipsum</a></li>
-									<li><a href="#" data-tab="tab-3">Donec faucibus risus cursus</a></li>
-								</ul>
-								<div class="tabs">
-
-									<!-- Tab 1 -->
-										<div class="tab tab-1 flex flex-3 active">
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic01.jpg'  %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic02.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic03.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic04.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic05.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic06.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-										</div>
-
-									<!-- Tab 2 -->
-										<div class="tab tab-2 flex flex-3">
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic01.jpg'  %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic02.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic03.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic04.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic05.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic06.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-										</div>
-
-									<!-- Tab 3 -->
-										<div class="tab tab-3 flex flex-3">
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic01.jpg'  %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic02.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic03.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic04.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic05.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic06.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-										</div>
-								</div>
-							</div>
-					</div>
-				</section>
-
-			<!-- Three -->
-				<section class="wrapper style2">
-					<div class="inner">
-						<header>
-							<h2>Top3 태그 추천</h2>
-							<p>사용자들이 좋아요 한 노래를 토대로 추천</p>
-						</header>
-						<!-- Tabbed Video Section -->
-							<div class="flex flex-tabs">
-								<ul class="tab-list">
-									<li><a href="#" data-tab="tab-1" class="active">Duis vestibulum tellus</a></li>
-									<li><a href="#" data-tab="tab-2">Quam tempus sodales ipsum</a></li>
-									<li><a href="#" data-tab="tab-3">Donec faucibus risus cursus</a></li>
-								</ul>
-								<div class="tabs">
-
-									<!-- Tab 1 -->
-										<div class="tab tab-1 flex flex-3 active">
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic01.jpg'  %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic02.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic03.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic04.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic05.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic06.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-										</div>
-
-									<!-- Tab 2 -->
-										<div class="tab tab-2 flex flex-3">
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic01.jpg'  %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic02.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic03.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic04.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic05.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic06.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-										</div>
-
-									<!-- Tab 3 -->
-										<div class="tab tab-3 flex flex-3">
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic01.jpg'  %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic02.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic03.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic04.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic05.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-											<!-- Video Thumbnail -->
-												<div class="video col">
-													<div class="image fit">
-														<img src="{% static 'images/pic06.jpg' %}" alt="" />
-														<div class="arrow">
-															<div class="icon fa-play"></div>
-														</div>
-													</div>
-													<a href="generic" class="link"><span>Click Me</span></a>
-													<p class="caption">
-														Pellentesque at nunc vitae urna suscipit mollis nec in arcu
-													</p>
-												</div>
-										</div>
-								</div>
-							</div>
-					</div>
-				</section>
-
+	<!-- Banner -->
+	<!-- To use a video as your background, set data-video to the name of your video without
+		its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+		formats to work correctly. -->
+		<section id="banner" data-video="images/banner">
+			<div class="inner">
+				<header>
+					<h1>환영합니다 :D</h1>
+					<p>당신의 취향을 선택해 나만의 플레이리스트를 만들어보세요 !</p>
+				</header>
+				<button onclick="document.getElementById('id01').style.display='block'" class="w3-button" style="font-size: 22px;">Login Us</button>
 			</div>
+		</section>
 
-		<!-- Scripts -->
-			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/scrolly.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<script src="{% static 'assets/js/main.js' %}"></script>
-			<script src="https://kit.fontawesome.com/4c6b2d2406.js" crossorigin="anonymous"></script>
+	<!-- Modal-->
+		<div id="id01" class="w3-modal">
+			<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:480px">
+				<div class="w3-center"><h4 style="padding:20px 20px; background-color: #333; color: white !important; text-align: center; font-size: 38px;"><span class="glyphicon glyphicon-lock"></span> Social Login Us</h4><br>
+					<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">×</span>
+				</div>
+
+				<form class="w3-container" action="/action_page.php" style="padding:0px 90px;">
+					<div class="w3-section">
+
+
+						<button class="w3-button w3-block w3-yellow w3-section w3-padding" type="submit" href="#" style="text-align: center; width:300px; height:50px; font-size:1.5em; font-color: white;">Login with Kakao</button>
+					</div>
+				</form>
+
+				<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+					<span onclick="document.getElementById('id01').style.display='none'" class="w3-right w3-padding w3-hide-small" title="Close Modal">Close</span>
+				</div>
+			</div>
+		</div>
+
+
+	<!-- Main -->
+		<div id="main">
+
+		<!-- one -->
+			<section class="wrapper ">
+				<div class="inner">
+					<header>
+						<h2>기분에 따른 플레이리스트</h2>
+						<p>멜론데이터를 토대로 플레이리스트 추천</p>
+					</header>
+
+					<!-- 4 Column Video Section -->
+						<div class="flex flex-4">
+							<div class="video col">
+								<div class="image fit">
+									<img src="{% static 'images/pic09.jpg' %}" alt="" />
+									<div class="arrow">
+										<div class="icon fa-play"></div>
+									</div>
+								</div>
+								<p class="caption">
+									Cras eget lacus sed mauris scelerisque tincidunt
+								</p>
+								<a href="generic" class="link"><span>Click Me</span></a>
+							</div>
+							<div class="video col">
+								<div class="image fit">
+									<img src="{% static 'images/pic10.jpg' %}" alt="" />
+									<div class="arrow">
+										<div class="icon fa-play"></div>
+									</div>
+								</div>
+								<p class="caption">
+									Vivamus vulputate lacus non massa auctor lobortis
+								</p>
+								<a href="generic" class="link"><span>Click Me</span></a>
+							</div>
+							<div class="video col">
+								<div class="image fit">
+									<img src="{% static 'images/pic11.jpg' %}" alt="" />
+									<div class="arrow">
+										<div class="icon fa-play"></div>
+									</div>
+								</div>
+								<p class="caption">
+									Nam eu nisi non ante sodales interdum a vitae neque
+								</p>
+								<a href="generic" class="link"><span>Click Me</span></a>
+							</div>
+							<div class="video col">
+								<div class="image fit">
+									<img src="{% static 'images/pic09.jpg' %}" alt="" />
+									<div class="arrow">
+										<div class="icon fa-play"></div>
+									</div>
+								</div>
+								<p class="caption">
+									Cras eget lacus sed mauris scelerisque tincidunt
+								</p>
+								<a href="generic" class="link"><span>Click Me</span></a>
+							</div>
+						</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section class="wrapper style2">
+				<div class="inner">
+					<header>
+						<h2>Top3 장르</h2>
+						<p>멜론데이터를 토대로 Top3 장르별 노래 추천</p>
+					</header>
+					<!-- Tabbed Video Section -->
+						<div class="flex flex-tabs">
+							<ul class="tab-list">
+								<li><a href="#" data-tab="tab-1" class="active">Duis vestibulum tellus</a></li>
+								<li><a href="#" data-tab="tab-2">Quam tempus sodales ipsum</a></li>
+								<li><a href="#" data-tab="tab-3">Donec faucibus risus cursus</a></li>
+							</ul>
+							<div class="tabs">
+
+								<!-- Tab 1 -->
+									<div class="tab tab-1 flex flex-3 active">
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic01.jpg'  %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic02.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic03.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic04.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic05.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic06.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+									</div>
+
+								<!-- Tab 2 -->
+									<div class="tab tab-2 flex flex-3">
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic01.jpg'  %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic02.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic03.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic04.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic05.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic06.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+									</div>
+
+								<!-- Tab 3 -->
+									<div class="tab tab-3 flex flex-3">
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic01.jpg'  %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic02.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic03.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic04.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic05.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic06.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+									</div>
+							</div>
+						</div>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section class="wrapper style2">
+				<div class="inner">
+					<header>
+						<h2>Top3 태그</h2>
+						<p>멜론데이터를 토대로 Top3 태그별 노래 추천</p>
+					</header>
+					<!-- Tabbed Video Section -->
+						<div class="flex flex-tabs">
+							<ul class="tab-list">
+								<li><a href="#" data-tab="tab-1" class="active">Duis vestibulum tellus</a></li>
+								<li><a href="#" data-tab="tab-2">Quam tempus sodales ipsum</a></li>
+								<li><a href="#" data-tab="tab-3">Donec faucibus risus cursus</a></li>
+							</ul>
+							<div class="tabs">
+
+								<!-- Tab 1 -->
+									<div class="tab tab-1 flex flex-3 active">
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic01.jpg'  %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic02.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic03.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic04.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic05.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic06.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+									</div>
+
+								<!-- Tab 2 -->
+									<div class="tab tab-2 flex flex-3">
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic01.jpg'  %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic02.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic03.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic04.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic05.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic06.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+									</div>
+
+								<!-- Tab 3 -->
+									<div class="tab tab-3 flex flex-3">
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic01.jpg'  %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic02.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic03.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic04.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic05.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+										<!-- Video Thumbnail -->
+											<div class="video col">
+												<div class="image fit">
+													<img src="{% static 'images/pic06.jpg' %}" alt="" />
+													<div class="arrow">
+														<div class="icon fa-play"></div>
+													</div>
+												</div>
+												<a href="generic" class="link"><span>Click Me</span></a>
+												<p class="caption">
+													Pellentesque at nunc vitae urna suscipit mollis nec in arcu
+												</p>
+											</div>
+									</div>
+							</div>
+						</div>
+				</div>
+			</section>
+
+		</div>
+
+
+	<!-- Scripts -->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/scrolly.min.js' %}"></script>
+		<script src="{% static 'assets/js/skel.min.js' %}"></script>
+		<script src="{% static 'assets/js/util.js' %}"></script>
+		<script src="{% static 'assets/js/main.js' %}"></script>
+		<script src="https://kit.fontawesome.com/4c6b2d2406.js" crossorigin="anonymous"></script>
 
 	</body>
 </html>

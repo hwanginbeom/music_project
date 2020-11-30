@@ -1,0 +1,93 @@
+{% load static %}
+<!--<!DOCTYPE HTML>-->
+<!--
+	Broadcast by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Broadcast by TEMPLATED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+	<body>
+    {background-color: #000000}
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="#">Broadcast <span>by TEMPLATED</span></a></h1>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/index">Home</a></li>
+					<li><a href="/generic">Generic</a></li>
+					<li><a href="/elements">Elements</a></li>
+				</ul>
+			</nav>
+
+			<!-- Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+				<section id="banner" data-video="images/banner">
+					<div class="inner">
+						<header>
+
+							<h2> 회원정보를 입력해주세요 :) </h2>
+
+							<h3> 닉네임 </h3>
+							<form method="post" action="#">
+								<div class="input_nickname">
+									<div class="9u 12u$(small)">
+										<input type="text" name="input_nickname" id="input_nickname" value placeholder="닉네임을 입력해주세요 :)">
+									</div>
+
+									<div class="3u$ 12u$(small)">
+										<input type="submit" value="중복 확인" class="fit">
+									</div>
+								</div>
+							</form>
+
+							<h3> Favorite Genre </h3>
+							<a href="#main" class="button alt"> 장르 선택하러 가기 </a>
+
+							<h3> Age </h3>
+							<select name="age_category" id="age_cagegory">
+								<option value> 나이 선택하기 !</option>
+								<option value="10"> 10대 </option>
+								<option value="20"> 20대 </option>
+								<option value="30"> 30대 </option>
+								<option value="40"> 40대 </option>
+								<option value="50"> 50대 이상 </option>
+							</select>
+
+							<h3> Gender </h3>
+							<div class="4u 12u$(small)">
+								<input type="radio" id="woman" name="gender" checked>
+								<label for="woman">
+									"여성입니당"
+								</label>
+							</div>
+							<div class="4u 12u$(small)">
+								<input type="radio" id="man" name="gender" >
+								<label for="man">
+									"남성입니당"
+								</label>
+							</div>
+
+						</header>
+						<a href="#main" class="button alt">설정 완료</a>
+					</div>
+
+				</section>
+
+
+
+	</body>
+</html>
