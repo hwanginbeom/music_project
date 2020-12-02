@@ -18,12 +18,13 @@ from django.urls import path
 from musicApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('', views.new_index, name='new_index'),
     path('genre', views.genre, name='genre'),
     path('filtering', views.filtering, name='filtering'),
     path('mypage', views.mypage, name='mypage'),
     path('new_index', views.new_index, name='new_index'),
     path('playlist', views.playlist, name='playlist'),
     path('tag', views.tag, name='tag'),
+    path('test', views.test, name='test'),
 
 ]

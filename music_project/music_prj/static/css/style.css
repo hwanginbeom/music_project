@@ -3122,13 +3122,13 @@ span.ms_frequency {
 }
 /*====Modal Css Start====*/
 .modal-content {
-	padding: 50px 50px 46px;
-	background-color: transparent;
-	border: none;
-	border-radius: 10px;
-	background-image: -moz-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
-	background-image: -webkit-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
-	background-image: -ms-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
+   padding: 50px 50px 46px;
+   background-color: #ff4865;
+   border: none;
+   border-radius: 10px;
+   background-image: -moz-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
+   /*background-image: -webkit-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);*/
+   background-image: -ms-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
 }
 .modal {
 	overflow: hidden;
