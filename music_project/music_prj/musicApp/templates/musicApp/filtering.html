@@ -1,0 +1,194 @@
+{% extends 'musicApp/base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+	<!----Loader Start---->
+	<div class="ms_loader">
+		<div class="wrap">
+		  <img src="{% static 'images/loader.gif' %}" alt="">
+		</div>
+	</div>
+
+
+    <!----Main Wrapper Start---->
+    <div class="ms_main_wrapper">
+        <!---Side Menu Start--->
+        <div class="ms_sidemenu_wrapper">
+            <div class="ms_nav_close">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+            <div class="ms_sidemenu_inner">
+                <div class="ms_logo_inner">
+                    <div class="ms_logo">
+                        <a href="new_index"><img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"></a>
+                    </div>
+                    <div class="ms_logo_open">
+                        <a href="new_index"><img src="{% static 'images/open_logo.png' %}" alt="" class="img-fluid"></a>
+                    </div>
+                </div>
+                <div class="ms_nav_wrapper mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar" style="overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                    <ul>
+                        <li><a href="new_index">
+						<span class="nav_icon">
+							<span class="icon icon_discover"></span>
+						</span>
+						<span class="nav_text">Home</span>
+						</a>
+                        </li>
+
+                        <li><a href="genre">
+						<span class="nav_icon">
+							<span class="icon icon_albums"></span>
+						</span>
+						<span class="nav_text">Genre</span>
+						</a>
+                        </li>
+
+                        <li><a href="tag">
+						<span class="nav_icon">
+							<span class="icon icon_music"></span>
+						</span>
+						<span class="nav_text">Tag</span>
+						</a>
+                        </li>
+
+                        <li><a href="playlist">
+						<span class="nav_icon">
+							<span class="icon icon_genres"></span>
+						</span>
+						<span class="nav_text">Playlist</span>
+						</a>
+                        </li>
+
+                    <li><a href="filtering" class="active">
+						<span class="nav_icon">
+							<span class="icon icon_fe_playlist"></span>
+						</span>
+						<span class="nav_text">Filtering</span>
+						</a>
+                        </li></ul>
+
+                    <ul class="nav_playlist">
+                        <li><a href="mypage">
+						    <span class="nav_icon">
+							<span class="icon icon_favourite"></span>
+						    </span>
+						    <span class="nav_text">My page</span>
+                        </a></li>
+                    </ul>
+                </div>
+                </div>
+                    <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal mCSB_scrollTools_vertical" style="display: none;">
+                        <div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; height: 0px; top: 0px; display: block; max-height: 613px;">
+                            <div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
+                        </div>
+                            <div class="mCSB_draggerRail"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----Footer Start---->
+        <div class="ms_footer_wrapper">
+            <div class="ms_footer_logo">
+                <a href="index"><img src="{% static 'images/open_logo.png' %}" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!----Register Modal Start---->
+    <!-- Modal -->
+    <div class="ms_register_popup">
+        <!----Login Popup Start---->
+        <div id="myModal" class="modal  centered-modal" role="dialog">
+            <div class="modal-dialog register_dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal">
+						<i class="fa_icon form_close"></i>
+					</button>
+                    <div class="modal-body">
+                        <div class="ms_register_img">
+                            <img src="{% static 'images/register_img.png' %}" alt="" class="img-fluid" />
+                        </div>
+                        <div class="ms_register_form">
+                            <h2>Register / Sign Up</h2>
+                            <div class="form-group">
+                                <input type="text" placeholder="Enter Your Name" class="form-control">
+                                <span class="form_icon">
+							<i class="fa_icon form-user" aria-hidden="true"></i>
+							</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Enter Your Email" class="form-control">
+                                <span class="form_icon">
+							<i class="fa_icon form-envelope" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Enter Password" class="form-control">
+                                <span class="form_icon">
+						<i class="fa_icon form-lock" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Confirm Password" class="form-control">
+                                <span class="form_icon">
+						<i class=" fa_icon form-lock" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <a href="#" class="ms_btn">register now</a>
+                            <p>Already Have An Account? <a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">login here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----Login Popup Start---->
+        <div id="myModal1" class="modal  centered-modal" role="dialog">
+            <div class="modal-dialog login_dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal">
+						<i class="fa_icon form_close"></i>
+					</button>
+                    <div class="modal-body">
+                        <div class="ms_register_img">
+                            <img src="{% static 'images/register_img.png' %}" alt="" class="img-fluid" />
+                        </div>
+                        <div class="ms_register_form">
+                            <h2>login / Sign in</h2>
+                            <div class="form-group">
+                                <input type="text" placeholder="Enter Your Email" class="form-control">
+                                <span class="form_icon">
+							<i class="fa_icon form-envelope" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Enter Password" class="form-control">
+                                <span class="form_icon">
+						<i class="fa_icon form-lock" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div class="remember_checkbox">
+                                <label>Keep me signed in
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+                            </div>
+                            <a href="profile" class="ms_btn" target="_blank">login now</a>
+                            <div class="popup_forgot">
+                                <a href="#">Forgot Password ?</a>
+                            </div>
+                            <p>Don't Have An Account? <a href="#myModal" data-toggle="modal" class="ms_modal1 hideCurrentModel">register here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

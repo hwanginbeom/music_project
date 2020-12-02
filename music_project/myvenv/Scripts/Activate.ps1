@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\hwang in beom\Desktop\final\source\music_project\myvenv"
+$env:VIRTUAL_ENV="C:\Users\hwang in beom\Desktop\final\music_project\myvenv"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

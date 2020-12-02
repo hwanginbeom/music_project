@@ -1,0 +1,1463 @@
+{% extends 'musicApp/base.html' %}
+{% load static %}
+{% block content %}
+<body>
+	<!----Loader Start---->
+	<div class="ms_loader">
+		<div class="wrap">
+		  <img src="{% static 'images/loader.gif' %}" alt="">
+		</div>
+	</div>
+
+
+    <!----Main Wrapper Start---->
+    <div class="ms_main_wrapper">
+        <!---Side Menu Start--->
+        <div class="ms_sidemenu_wrapper">
+            <div class="ms_nav_close">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+            <div class="ms_sidemenu_inner">
+                <div class="ms_logo_inner">
+                    <div class="ms_logo">
+                        <a href="new_index"><img src="{% static 'images/logo.png' %}" alt="" class="img-fluid"></a>
+                    </div>
+                    <div class="ms_logo_open">
+                        <a href="new_index"><img src="{% static 'images/open_logo.png' %}" alt="" class="img-fluid"></a>
+                    </div>
+                </div>
+                <div class="ms_nav_wrapper mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar" style="overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                    <ul>
+                        <li><a href="new_index">
+						<span class="nav_icon">
+							<span class="icon icon_discover"></span>
+						</span>
+						<span class="nav_text">Home</span>
+						</a>
+                        </li>
+
+                        <li><a href="genre">
+						<span class="nav_icon">
+							<span class="icon icon_albums"></span>
+						</span>
+						<span class="nav_text">Genre</span>
+						</a>
+                        </li>
+
+                        <li><a href="tag">
+						<span class="nav_icon">
+							<span class="icon icon_music"></span>
+						</span>
+						<span class="nav_text">Tag</span>
+						</a>
+                        </li>
+
+                        <li><a href="playlist" class="active">
+						<span class="nav_icon">
+							<span class="icon icon_genres"></span>
+						</span>
+						<span class="nav_text">Playlist</span>
+						</a>
+                        </li>
+
+                    <li><a href="filtering">
+						<span class="nav_icon">
+							<span class="icon icon_fe_playlist"></span>
+						</span>
+						<span class="nav_text">Filtering</span>
+						</a>
+                        </li></ul>
+
+                    <ul class="nav_playlist">
+
+
+                    <li><a href="mypage">
+						<span class="nav_icon">
+							<span class="icon icon_favourite"></span>
+						</span>
+						<span class="nav_text">My page</span>
+						</a>
+                        </li></ul>
+                </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; height: 0px; top: 0px; display: block; max-height: 613px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
+            </div>
+        </div>
+        <!---Main Content Start--->
+        <div class="ms_content_wrapper padder_top80">
+            <!---Header--->
+            <div class="ms_header">
+
+                <div class="ms_top_right">
+
+                    <div class="ms_top_btn">
+                        <a href=filtering class="ms_btn register_btn"><span>Filter</span></a>
+                        <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>
+                    </div>
+                </div>
+            </div>
+            <!---Top Playlists Section Start--->
+            <div class="ms_top_artist">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ms_heading">
+                                <h1 style="font-size:40px">Playlists</h1>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/music/r_music1.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ovrly_text_div">
+                                            <span class="ovrly_text2"><a href="#detail1">view song</a></span>
+                                        </div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail1"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail1">Playlist 1</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/artist/artist1.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail2"><img src="{% static 'images/svg/play.svg' %}"  href="#detail2"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail2">Playlist 2</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/artist/artist2.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail3"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail3">Playlist 3</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/artist/artist4.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail4"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="detail4">Playlist 4</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/artist/artist5.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail5"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail5">Playlist 5</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/artist/artist6.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail6"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail6">Playlist 6</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/artist/artist7.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail7"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail7">Playlist 7</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/artist/artist8.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail8"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail8">Playlist 8</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/featured/song6.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail9"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="detail9">Playlist 9</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/album/album4.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail10"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail10">Playlist 10</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/featured/song2.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail11"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail11">Playlist 11</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ms_rcnt_box marger_bottom30">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="{% static 'images/artist/artist3.jpg' %}" alt="" class="img-fluid">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <a href="#detail12"><img src="{% static 'images/svg/play.svg' %}"  alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="#detail12">Playlist 12</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail1">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 1</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a><span class="play_hover"></span></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+                            <li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a href="#"><img src="{% static 'images/svg/play.svg' %}" width="20" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail2">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 2</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}"  width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail3">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 3</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail4">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 4</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail5">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 5</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail6">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 6</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail7">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 7</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail8">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 8</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail9">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 9</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail10">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 10</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail11">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 11</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+            </div>
+            <!----Top Playlists Section Detail Start---->
+            <div class="ms_free_download" id="detail12">
+                <div class="ms_heading">
+                    <h1 style="font-size:20px">Playlist 12</h1>
+                </div>
+				<div class="album_inner_list">
+					<div class="album_list_wrapper">
+						<ul class="album_list_name">
+							<li>#</li>
+							<li>Song Title</li>
+							<li>Singer</li>
+							<li class="text-center">Release Date</li>
+							<li class="text-center">Play</li>
+						</ul>
+						<ul>
+							<li><a>01</a></li>
+							<li><a>Bloodlust</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>02</a></li>
+							<li><a>Desired Games</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>03</a></li>
+							<li><a>Until I Met You</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>04</a></li>
+							<li><a>Dark Alley Acoustic</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>05</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>06</a></li>
+							<li><a>Walking Promises</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>07</a></li>
+							<li><a>Endless Things</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>08</a></li>
+							<li><a>Gimme Some Courage</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>09</a></li>
+							<li><a>One More Stranger</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a>10</a></li>
+							<li><a>Cloud nine</a></li>
+							<li><a>Dream Your Moments</a></li>
+							<li class="text-center"><a>5:26</a></li>
+							<li class="text-center"><a><img src="{% static 'images/svg/play.svg' %}" width="20" href="#"  alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+            </div>
+        </div>
+        <!----Footer Start---->
+        <div class="ms_footer_wrapper">
+            <div class="ms_footer_logo">
+                <a href="index"><img src="{% static 'images/open_logo.png' %}" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!----Register Modal Start---->
+    <!-- Modal -->
+    <div class="ms_register_popup">
+        <!----Login Popup Start---->
+        <div id="myModal" class="modal  centered-modal" role="dialog">
+            <div class="modal-dialog register_dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal">
+						<i class="fa_icon form_close"></i>
+					</button>
+                    <div class="modal-body">
+                        <div class="ms_register_img">
+                            <img src="{% static 'images/register_img.png' %}" alt="" class="img-fluid" />
+                        </div>
+                        <div class="ms_register_form">
+                            <h2>Register / Sign Up</h2>
+                            <div class="form-group">
+                                <input type="text" placeholder="Enter Your Name" class="form-control">
+                                <span class="form_icon">
+							<i class="fa_icon form-user" aria-hidden="true"></i>
+							</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Enter Your Email" class="form-control">
+                                <span class="form_icon">
+							<i class="fa_icon form-envelope" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Enter Password" class="form-control">
+                                <span class="form_icon">
+						<i class="fa_icon form-lock" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Confirm Password" class="form-control">
+                                <span class="form_icon">
+						<i class=" fa_icon form-lock" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <a href="#" class="ms_btn">register now</a>
+                            <p>Already Have An Account? <a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">login here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----Login Popup Start---->
+        <div id="myModal1" class="modal  centered-modal" role="dialog">
+            <div class="modal-dialog login_dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal">
+						<i class="fa_icon form_close"></i>
+					</button>
+                    <div class="modal-body">
+                        <div class="ms_register_img">
+                            <img src="{% static 'images/register_img.png' %}" alt="" class="img-fluid" />
+                        </div>
+                        <div class="ms_register_form">
+                            <h2>login / Sign in</h2>
+                            <div class="form-group">
+                                <input type="text" placeholder="Enter Your Email" class="form-control">
+                                <span class="form_icon">
+							<i class="fa_icon form-envelope" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Enter Password" class="form-control">
+                                <span class="form_icon">
+						<i class="fa_icon form-lock" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div class="remember_checkbox">
+                                <label>Keep me signed in
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+                            </div>
+                            <a href="profile" class="ms_btn" target="_blank">login now</a>
+                            <div class="popup_forgot">
+                                <a href="#">Forgot Password ?</a>
+                            </div>
+                            <p>Don't Have An Account? <a href="#myModal" data-toggle="modal" class="ms_modal1 hideCurrentModel">register here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,4 +1,4 @@
-#!c:\users\hwang in beom\desktop\final\source\music_proj\myvenv\scripts\python.exe
+#!c:\users\hwang in beom\desktop\final\music_project\myvenv\scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
