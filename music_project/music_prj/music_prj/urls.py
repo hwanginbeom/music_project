@@ -25,5 +25,6 @@ urlpatterns = [
     path('new_index', views.new_index, name='new_index'),
     path('playlist', views.playlist, name='playlist'),
     path('tag', views.tag, name='tag'),
+    path('test', views.test, name='test'),
 
 ]

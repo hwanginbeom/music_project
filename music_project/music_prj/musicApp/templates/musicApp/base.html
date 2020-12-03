@@ -22,6 +22,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'js/plugins/player/volume.css' %}" >
 	<link rel="stylesheet" type="text/css" href="{% static 'js/plugins/scroll/jquery.mCustomScrollbar.css' %}" >
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/YouTubePopUp.css' %}">
+
+
+
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
 </head>
@@ -39,6 +43,16 @@
     <script type="text/javascript" src="{% static 'js/plugins/nice_select/jquery.nice-select.min.js' %}" ></script>
 	<script type="text/javascript" src="{% static 'js/plugins/scroll/jquery.mCustomScrollbar.js' %}" ></script>
     <script type="text/javascript" src="{% static 'js/custom.js' %}" ></script>
+    <script type="text/javascript" src="{% static 'js/youtube.js' %}" ></script>
+	<script type="text/javascript" src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/YouTubePopUp.jquery.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(function(){
+			jQuery("a.bla-1").YouTubePopUp();
+			jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+		});
+	</script>
+
 </body>
 
 </html>

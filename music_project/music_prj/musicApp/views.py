@@ -31,3 +31,5 @@ def playlist(request) :
 def tag(request) :
     return render(request, 'musicApp/tag.html')
 
+def test(request) :
+    return render(request, 'musicApp/test.html')
