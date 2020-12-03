@@ -3123,7 +3123,6 @@ span.ms_frequency {
 }
 /*====Modal Css Start====*/
 .modal-content {
-<<<<<<< HEAD
 	padding: 50px 50px 46px;
 	background-color: #ff4865;
 	border: none;
@@ -3131,15 +3130,7 @@ span.ms_frequency {
 	background-image: -moz-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
 	/*background-image: -webkit-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);*/
 	background-image: -ms-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
-=======
-   padding: 50px 50px 46px;
-   background-color: #ff4865;
-   border: none;
-   border-radius: 10px;
-   background-image: -moz-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
-   /*background-image: -webkit-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);*/
-   background-image: -ms-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
->>>>>>> 3677364699699769246ee8bd91c1905daadb650f
+
 }
 .modal {
 	overflow: hidden;

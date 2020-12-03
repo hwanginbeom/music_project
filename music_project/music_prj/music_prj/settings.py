@@ -162,25 +162,9 @@ USE_TZ = True
 #     os.path.join(BASE_DIR, 'musicApp', 'static')
 # ]
 
-<<<<<<< HEAD
-=======
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
-#
->>>>>>> 3677364699699769246ee8bd91c1905daadb650f
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
