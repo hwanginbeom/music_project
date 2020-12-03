@@ -83,11 +83,11 @@ button:focus {
 	color: #ff4865 !important
 }
 .form-control {
-	height: 40px;
+	height: 60px;
 	padding: 0px 20px;
-	font-size: 16px;
+	font-size: 22px;
 	line-height: 40px;
-	color: #777777;
+	color: #495057;
 	background-color: #fff;
 	border-radius: 5px;
 	border: 1px solid transparent;
@@ -1419,6 +1419,7 @@ ul.more_option li a:hover .opt_icon .icon_share {
 .ms_releases_wrapper {
 	position: relative;
 	margin: 40px 0px 0px 0px;
+	height: 50%
 }
 /*====Advertisment Css Start====*/
 .ms_advr_wrapper {
@@ -3123,11 +3124,11 @@ span.ms_frequency {
 /*====Modal Css Start====*/
 .modal-content {
 	padding: 50px 50px 46px;
-	background-color: transparent;
+	background-color: #ff4865;
 	border: none;
 	border-radius: 10px;
 	background-image: -moz-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
-	background-image: -webkit-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
+	/*background-image: -webkit-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);*/
 	background-image: -ms-linear-gradient( 180deg, rgb(22, 26, 46) 0%, rgb(237, 63, 179) 0%, rgb(59, 200, 231) 0%, rgb(32, 167, 196) 100%);
 }
 .modal {
@@ -3198,8 +3199,9 @@ i.fa_icon.form_close {
 	font-size: 24px;
 	color: #fff;
 	text-align: center;
-	padding-bottom: 10px;
-	margin-bottom: 30px;
+	padding-bottom: 25px;
+	margin-bottom: 35px;
+	margin-top: 50px;
 	position: relative;
 	display: inline-block;
 	text-transform: capitalize;
@@ -3253,11 +3255,13 @@ i.fa_icon.form-lock {
 	width: auto;
 	margin-top: 10px;
 }
+/*
 .ms_register_form a.ms_btn:hover,
 .ms_lang_popup .modal-content.add_lang .ms_lang_btn a.ms_btn:hover {
 	background-color: #ffffff;
 	color: #22bed7;
 }
+*/
 .ms_register_form p {
 	text-align: center;
 	color: #fff;
@@ -5165,7 +5169,7 @@ h2.widget-title:after {
 		padding-left: 30px;
 	}
 	.ms_register_popup .modal-content {
-		padding: 55px 30px;
+		padding: 55px 55px;
 	}
 	.ms_upload_box {
 		width: 80%;
@@ -6605,4 +6609,20 @@ h2.widget-title:after {
 		-ms-flex-preferred-size: 190px;
 		flex-basis: 190px;
 	}
+}
+/*myBtn*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #ff4865;
 }

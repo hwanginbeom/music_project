@@ -96,7 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_project',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'Park3098!!',
         'HOST': 'localhost',
         'PORT': '3306',
 
@@ -163,15 +163,13 @@ USE_TZ = True
 #     os.path.join(BASE_DIR, 'musicApp', 'static')
 # ]
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-#
 # STATIC_URL = '/static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# VENV_PATH = os.path.dirname(BASE_DIR)
-# STATIC_ROOT = os.path.join(VENV_PATH, 'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
