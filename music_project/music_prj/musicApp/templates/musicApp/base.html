@@ -46,12 +46,74 @@
     <script type="text/javascript" src="{% static 'js/youtube.js' %}" ></script>
 	<script type="text/javascript" src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/YouTubePopUp.jquery.js' %}"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script type="text/javascript">
 		jQuery(function(){
 			jQuery("a.bla-1").YouTubePopUp();
 			jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
 		});
 	</script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        Kakao.init('26afcbd30471817cf5b5f6ac21384b06');
+
+        Kakao.Link.createDefaultButton({
+          container: '.kakao-link-btn',
+          objectType: 'feed',
+          content: {
+            title: '오마이걸',
+            description: '돌핀(dolpin)',
+            imageUrl: 'https://w.namu.la/s/28c572056eed4c270d5baa57d4e742792bab952bb183c3c6bce3bb6c1bdf60c24fda47e1f0048d921eb70619e9837490470ab069e5f663574b99c79b1bb6b61dd9959a923f961d3a332268f42d83d68b018866681ef68c4b313dda1f6208e4cabda893bef5217186f6a2743074068634',
+            link: {
+              mobileWebUrl: 'http://127.0.0.1:8000/filtering',
+              webUrl: 'http://127.0.0.1:8000/filtering'
+            }
+          },
+          buttons: [
+            {
+              title: '나만의 플레이 리스트 만들기',
+              link: {
+                mobileWebUrl: 'http://127.0.0.1:8000/filtering',
+                webUrl: 'http://127.0.0.1:8000/filtering'
+              }
+            }
+          ]
+        });
+                Kakao.Link.createDefaultButton({
+          container: '.kakao-link-btn2',
+          objectType: 'feed',
+          content: {
+            title: '오마이걸',
+            description: '돌핀(dolpin)',
+            imageUrl: 'https://w.namu.la/s/28c572056eed4c270d5baa57d4e742792bab952bb183c3c6bce3bb6c1bdf60c24fda47e1f0048d921eb70619e9837490470ab069e5f663574b99c79b1bb6b61dd9959a923f961d3a332268f42d83d68b018866681ef68c4b313dda1f6208e4cabda893bef5217186f6a2743074068634',
+            link: {
+              mobileWebUrl: 'http://127.0.0.1:8000/filtering',
+              webUrl: 'http://127.0.0.1:8000/filtering'
+            }
+          },
+          buttons: [
+            {
+              title: '나만의 플레이 리스트 만들기',
+              link: {
+                mobileWebUrl: 'http://127.0.0.1:8000/filtering',
+                webUrl: 'http://127.0.0.1:8000/filtering'
+              }
+            }
+          ]
+        });
+      //]]>
+
+        <!--Kakao.Link.createCustomButton({-->
+          <!--container: '#kakao-link-btn',-->
+          <!--templateId: 41860,-->
+          <!--templateArgs: {-->
+            <!--'title': '제목 영역입니다.',-->
+            <!--'description': '설명 영역입니다.'-->
+          <!--}-->
+        <!--});-->
+    </script>
+
+
 
 </body>
 
