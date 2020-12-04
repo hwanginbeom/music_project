@@ -1490,6 +1490,7 @@ ul.more_option li a:hover .opt_icon .icon_share {
 	background-size: 7px 12px;
 	right: 0;
 }
+/*
 .swiper-slide.swiper-slide-active .slider_dot,
 .ms_release_box:hover .slider_dot {
 	box-shadow: 0px 0px 10px rgb(255, 255, 255);
@@ -1515,6 +1516,7 @@ ul.more_option li a:hover .opt_icon .icon_share {
 	width: 25px;
 	height: 25px;
 }
+*/
 /*====Featured Album Slider Css Start====*/
 .ms_fea_album_slider {
 	position: relative;
