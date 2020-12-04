@@ -54,64 +54,54 @@
 		});
 	</script>
     <script type='text/javascript'>
+
       //<![CDATA[
         Kakao.init('26afcbd30471817cf5b5f6ac21384b06');
-
-        Kakao.Link.createDefaultButton({
-          container: '.kakao-link-btn',
-          objectType: 'feed',
-          content: {
-            title: '오마이걸',
-            description: '돌핀(dolpin)',
-            imageUrl: 'https://w.namu.la/s/28c572056eed4c270d5baa57d4e742792bab952bb183c3c6bce3bb6c1bdf60c24fda47e1f0048d921eb70619e9837490470ab069e5f663574b99c79b1bb6b61dd9959a923f961d3a332268f42d83d68b018866681ef68c4b313dda1f6208e4cabda893bef5217186f6a2743074068634',
-            link: {
-              mobileWebUrl: 'http://127.0.0.1:8000/filtering',
-              webUrl: 'http://127.0.0.1:8000/filtering'
-            }
+        function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '오마이걸 - 돌핀',
+        description: '#태그 - 신남 #꽤나 #많이 #오예 #쮓 #쒯',
+        imageUrl:
+          'https://w.namu.la/s/28c572056eed4c270d5baa57d4e742792bab952bb183c3c6bce3bb6c1bdf60c24fda47e1f0048d921eb70619e9837490470ab069e5f663574b99c79b1bb6b61dd9959a923f961d3a332268f42d83d68b018866681ef68c4b313dda1f6208e4cabda893bef5217186f6a2743074068634',
+        link: {
+          mobileWebUrl: 'http://127.0.0.1:8000/filtering',
+          webUrl: 'http://127.0.0.1:8000/filtering',
+        },
+      },
+      social: {
+        likeCount: 286,
+        commentCount: 45,
+        sharedCount: 845,
+      },
+      buttons: [
+        {
+          title: '나만의 플레이리스트 만들기',
+          link: {
+            mobileWebUrl: 'http://127.0.0.1:8000/filtering',
+            webUrl: 'http://127.0.0.1:8000/filtering',
           },
-          buttons: [
-            {
-              title: '나만의 플레이 리스트 만들기',
-              link: {
-                mobileWebUrl: 'http://127.0.0.1:8000/filtering',
-                webUrl: 'http://127.0.0.1:8000/filtering'
-              }
-            }
-          ]
-        });
-                Kakao.Link.createDefaultButton({
-          container: '.kakao-link-btn2',
-          objectType: 'feed',
-          content: {
-            title: '오마이걸',
-            description: '돌핀(dolpin)',
-            imageUrl: 'https://w.namu.la/s/28c572056eed4c270d5baa57d4e742792bab952bb183c3c6bce3bb6c1bdf60c24fda47e1f0048d921eb70619e9837490470ab069e5f663574b99c79b1bb6b61dd9959a923f961d3a332268f42d83d68b018866681ef68c4b313dda1f6208e4cabda893bef5217186f6a2743074068634',
-            link: {
-              mobileWebUrl: 'http://127.0.0.1:8000/filtering',
-              webUrl: 'http://127.0.0.1:8000/filtering'
-            }
-          },
-          buttons: [
-            {
-              title: '나만의 플레이 리스트 만들기',
-              link: {
-                mobileWebUrl: 'http://127.0.0.1:8000/filtering',
-                webUrl: 'http://127.0.0.1:8000/filtering'
-              }
-            }
-          ]
-        });
-      //]]>
+        },
+      ],
+    })
+  }
 
-        <!--Kakao.Link.createCustomButton({-->
-          <!--container: '#kakao-link-btn',-->
-          <!--templateId: 41860,-->
-          <!--templateArgs: {-->
-            <!--'title': '제목 영역입니다.',-->
-            <!--'description': '설명 영역입니다.'-->
-          <!--}-->
-        <!--});-->
-    </script>
+  function sendTextLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'text',
+      text:
+        '1.오마이걸 - 돌핀, 2.오쮓 - 배고파,3.돈주남 - 가자,1.오마이걸 - 돌핀, 2.오쮓 - 배고파,3.돈주남 - 가자,1.오마이걸 - 돌핀, 2.오쮓 - 배고파,3.돈주남 - 가자,1.오마이걸 - 돌핀, 2.오쮓 - 배고파,3.돈주남 - 가자',
+      link: {
+        mobileWebUrl:
+          'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
+        webUrl:
+          'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
+      },
+    })
+  }
+</script>
+
 
 
 
