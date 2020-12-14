@@ -22,16 +22,39 @@ def index(request) :
 
 def genre(request) :
     song_meta = SongMeta.objects.all()
+    song_meta2 = SongMeta.objects.values()
+    b = SongMeta.objects.get(song_id=1) # 데이터 가져오는 방식
+    # gnr = SongMeta.objects.get(song_gn_gnr_basket='GN0500')
+    # b = SongMeta.objects.filter(Song_id="0")
     # song = song_meta.filter(song_id = 0)
-    print(song_meta)
-    print("####")
+    print("############################################")
+    print(song_meta.values())
+    print("############################################")
+    print(song_meta.values)
+    print("############################################")
+    print(b.album_id) # 가져온 값에서 꺼내는 방식 해당 컬럼명을 가져오면 된다.
+    print("############################################")
+    print(song_meta2)
+    # print(gnr.song_gn_gnr_basket)
+    print("#######################39#####################")
+    print(song_meta2[0])
+    # print(gnr.song_gn_gnr_basket)
+    print("#########################42###################")
+    print(song_meta2[0]['song_gn_dtl_gnr_basket'])
+    # print(gnr.song_gn_gnr_basket)
+    print("#########################45###################")
+    for i in song_meta2:
+        print(i['song_gn_dtl_gnr_basket'])
+    print("#########################47###################")
     idx = []
     for i, obj in enumerate(song_meta):
         idx.append(obj)
+        # print(obj)
+        # print(i)
         if (i == 20):
             break
 
-    print(obj)
+    # print(obj)
     # id = 0
     # song_id_list = [song_meta[idx[0]].song_id, song_meta[idx[1]].song_id]
     # song_id = song_meta[id].song_id

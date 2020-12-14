@@ -46,7 +46,10 @@
     <script type="text/javascript" src="{% static 'js/youtube.js' %}" ></script>
 	<script type="text/javascript" src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/YouTubePopUp.jquery.js' %}"></script>
-    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.js"></script>
+	<script type="text/javascript">
+        Kakao.init('26afcbd30471817cf5b5f6ac21384b06');
+    </script>
 	<script type="text/javascript">
 		jQuery(function(){
 			jQuery("a.bla-1").YouTubePopUp();
@@ -56,7 +59,6 @@
     <script type='text/javascript'>
 
       //<![CDATA[
-        Kakao.init('26afcbd30471817cf5b5f6ac21384b06');
         function sendLink() {
     Kakao.Link.sendDefault({
       objectType: 'feed',
@@ -101,9 +103,6 @@
     })
   }
 </script>
-
-
-
 
 </body>
 
