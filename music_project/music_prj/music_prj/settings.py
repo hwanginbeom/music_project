@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # 'allauth.socialaccount.providers.auth0',
-    # 'rest_auth.registration',
+    'rest_auth.registration',
 
     # provider
     'allauth.socialaccount.providers.kakao',
@@ -105,19 +105,21 @@ DATABASES = {
 
 
 # settings.py
-SOCIALACCOUNT_PROVIDERS = {
-    'kakao': {
-        'APP': {
-            'client_id': '844a2ef702bfa8f3a8f1e3f359924c37',
-            'secret': 450585,
-            'key': ''
-        }
-    },
-    'google': {
-        'SCOPE': ['profile', 'email', ],
-        'AUTH_PARAMS': {'access_type': 'online', }
-    }
-}
+# SOCIALACCOUNT_PROVIDERS = {
+#     'kakao': {
+#         'APP': {
+#             'client_id': '844a2ef702bfa8f3a8f1e3f359924c37',
+#             'secret': 450585,
+#             'key': ''
+#         }
+#     },
+#     'google': {
+#         'SCOPE': ['profile', 'email', ],
+#         'AUTH_PARAMS': {'access_type': 'online', }
+#     }
+# }
+
+KAKAO_REST_API_KEY = '844a2ef702bfa8f3a8f1e3f359924c37'
 
 
 # Password validation
@@ -168,14 +170,33 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
+
+# 로그인 후 리디렉션 홈페이지
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
-SITE_ID = 2
+# 하나의 도메인만 사용
+SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
         'social_core.backends.google.GoogleOAuth2',  # Google
+        'social_core.backends.kakao.KakaoOAuth2',  # Kakao
         'allauth.account.auth_backends.AuthenticationBackend', )
 
+# Kakao
+SOCIAL_AUTH_KAKAO_KEY = "844a2ef702bfa8f3a8f1e3f359924c37"
+SOCIAL_AUTH_KAKAO_SECRET = "844a2ef702bfa8f3a8f1e3f359924c37"
+SOCIAL_AUTH_KAKAO_SCOPE = ['account_email', 'birthday', 'profile']
+
+# 세션 인증과 jwt 인증
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ],
+}
