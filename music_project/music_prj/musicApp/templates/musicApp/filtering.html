@@ -172,6 +172,7 @@ label img {
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <ul>
                             <form action="{%url 'test' %}" method="post">
 
@@ -186,6 +187,14 @@ label img {
                                   <button type="submit">저장</button>
                         </form>
 
+=======
+                        <ul id='thisul'>
+                            <li>
+                                <input type="checkbox" />
+                                <label><img src="http://townandcountryremovals.com/wp-content/uploads/2013/10/firefox-logo-200x200.png" /></label>
+                                여기저기거기-범키
+                            </li>
+>>>>>>> 9a7b3c28f0bc3c2baca6a13d7f551291cdae474e
                         </ul>
                     </div>
                 </div>
@@ -369,4 +378,24 @@ label img {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;}
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#thisul').empty()
+            var txt = "";
+            for(var i = 0; i<100; i++){
+                txt += '<li>';
+                txt += '<input type="checkbox" id="myCheckbox'+(i+1)+'" />'
+                txt += '<label for="myCheckbox'+(i+1)+'">'
+                txt += '<img src="http://townandcountryremovals.com/wp-content/uploads/2013/10/firefox-logo-200x200.png" />'
+                txt += '</label>'
+                txt += '여기저기거기-범키'
+                txt +='</li>'
+            }
+         $('#thisul').append(txt)
+        })
+    </script>
+
 {% endblock %}
