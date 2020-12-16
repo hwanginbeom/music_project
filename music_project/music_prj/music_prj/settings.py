@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'musicApp',
+    'registerProfile',
 
     # third party
     # django-rest-auth

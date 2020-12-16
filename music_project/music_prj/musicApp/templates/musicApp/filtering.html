@@ -173,21 +173,19 @@ label img {
                         </div>
 
                         <ul>
-                          <li>
-                            <input type="checkbox" id="myCheckbox1" />
-                              <label for="myCheckbox1"><img src="http://townandcountryremovals.com/wp-content/uploads/2013/10/firefox-logo-200x200.png" /></label>
-                              여기저기거기 - 범키
-                          </li>
-                          <li>
+                            <form action="{%url 'test' %}" method="post">
 
-                            <input type="checkbox" id="myCheckbox2" />
-                            <label for="myCheckbox2"><img src="http://tech21info.com/admin/wp-content/uploads/2013/03/chrome-logo-200x200.png" /></label>
-                          </li>
+                        {% for obj in mood_change %}
                           <li>
-
-                            <input type="checkbox" id="myCheckbox3" />
-                            <label for="myCheckbox3"><img src="https://an2-img.amz.wtchn.net/image/v1/watcha/image/upload/c_fill,h_400,q_80,w_280/v1463577176/tfc4df-36149.jpg" /></label>
+                            <input type="checkbox" id="myCheckbox{{ forloop.counter }}" name="song_id[]" value="{{ obj.song_id }}"/>
+                              <label for="myCheckbox{{ forloop.counter }}"><img src="{{ obj.album_image }}" /></label>
+                               <div class="txt_line" style=" width:240px; padding:0 5px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">
+                                   {{ obj.artist_name_basket }} - {{ obj.song_name }}</div>
                           </li>
+                            {% endfor %}
+                                  <button type="submit">저장</button>
+                        </form>
+
                         </ul>
                     </div>
                 </div>

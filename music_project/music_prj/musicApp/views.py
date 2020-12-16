@@ -78,7 +78,23 @@ def genre(request) :
     return render(request, 'musicApp/genre.html', context)
 
 def filtering(request) :
-    return render(request, 'musicApp/filtering.html')
+    # song_meta = SongMeta.objects.values()
+    if request.method == 'POST':
+        selected = request.POST.getlist('selected')
+        print("########################")
+        print(selected)
+        print("########################")
+        return render(request, 'musicApp/mypage.html')
+
+    # return redirect(...)
+    mood_change = SongMeta.objects.filter(song_id__in=[135153, 569587, 365302, 676338, 177886, 328223, 145616, 529031, 104628, 457585, 601917, 270710, 264357, 672573, 418093, 145174, 352039, 704838, 562575, 260653, 296594, 339513, 548602, 548338, 700011, 83497, 196327, 636401, 486784, 681746, 443095, 420014, 241788, 341206, 439301, 374865, 506919, 5329])
+    array = []
+    for i in range(1,101):
+        a = "myCheckbox"+str(i)
+        array.append(a)
+    print(array)
+    context = {'mood_change': mood_change, 'array': array}
+    return render(request, 'musicApp/filtering.html', context)
 
 def mypage(request) :
     return render(request, 'musicApp/mypage.html')
