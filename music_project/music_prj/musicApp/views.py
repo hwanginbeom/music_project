@@ -23,60 +23,22 @@ def index(request) :
     return render(request, 'musicApp/index.html')
 
 def genre(request) :
-    song_meta = SongMeta.objects.all()
-    song_meta2 = SongMeta.objects.values()
-    # b = SongMeta.objects.get(song_id=1) # 데이터 가져오는 방식
-    # gnr = SongMeta.objects.get(song_gn_gnr_basket='GN0500')
-    # b = SongMeta.objects.filter(Song_id="0")
-    # song = song_meta.filter(song_id = 0)
-    print("############################################")
-    print(song_meta.values())
-    print("############################################")
-    print(song_meta.values)
-    print("############################################")
-    # print(b.album_id) # 가져온 값에서 꺼내는 방식 해당 컬럼명을 가져오면 된다.
-    print("############################################")
-    print(song_meta2)
-    # print(gnr.song_gn_gnr_basket)
-    print("#######################39#####################")
-    print(song_meta2[0])
-    # print(gnr.song_gn_gnr_basket)
-    print("#########################42###################")
-    print(song_meta2[0]['song_gn_dtl_gnr_basket'])
-    # print(gnr.song_gn_gnr_basket)
-    print("#########################45###################")
-    # for i in song_meta2:
-    #     print(i['song_gn_dtl_gnr_basket'])
-    print("#########################47###################")
-    idx = []
-    for i, obj in enumerate(song_meta):
-        idx.append(obj)
-        # print(obj)
-        # print(i)
-        if (i == 20):
-            break
+    balad = SongMeta.objects.filter(song_id__in=[54, 62, 67, 210, 224, 250, 305, 463, 496, 523, 815, 861, 953, 1048, 1053, 1215, 1230, 1236, 1475,1513])
+    dancing = SongMeta.objects.filter(song_id__in=[195, 341, 642, 645, 682, 1255, 1313, 1463, 1814, 1816, 2224, 2726, 3220, 3511, 3724, 3727, 3920,3934, 4213, 4491])
+    hiphop = SongMeta.objects.filter(song_id__in=[47, 294, 304, 340, 598, 677, 1016, 1290, 1296, 1382, 1471, 1546, 1629, 1659, 1955, 2089, 2148,2214, 2242, 2472])
+    rnb = SongMeta.objects.filter(song_id__in=[187, 289, 296, 309, 311, 347, 532, 864, 1182, 1236, 1580, 1632, 1757, 1937, 1938, 2131, 2188, 2230,2267, 2497])
+    indie = SongMeta.objects.filter(song_id__in=[19, 47, 148, 229, 309, 363, 677, 788, 1209, 1220, 1232, 1255, 1262, 1632, 1666, 1740, 1856, 1937,2095, 2131])
+    rock = SongMeta.objects.filter(song_id__in=[143, 148, 261, 440, 869, 889, 949, 1220, 1262, 1508, 1854, 1954, 2431, 2479, 2955, 3202, 3418,3488, 3514, 3572])
+    pop = SongMeta.objects.filter(song_id__in=[109, 198, 255, 299, 307, 398, 420, 466, 501, 706, 787, 805, 846, 863, 961, 964, 972, 989, 1039,1156])
+    ost = SongMeta.objects.filter(song_id__in=[32, 146, 152, 353, 463, 632, 646, 671, 800, 1133, 1215, 1421, 2076, 2149, 2188, 2199, 2281, 2312,2332, 2559])
+    idol = SongMeta.objects.filter(song_id__in=[67, 642, 645, 682, 861, 889, 1230, 1313, 1814, 1914, 2188, 2224, 2479, 2512, 2726, 3724, 3727,3805, 3934, 4018])
+    edm = SongMeta.objects.filter(song_id__in=[14, 174, 397, 595, 699, 956, 1628, 1919, 1966, 2077, 2178, 2209, 3272, 3289, 3499, 3520, 3550,3751, 3874, 4241])
+    musical = SongMeta.objects.filter(song_id__in=[28590, 46726, 61591, 71702, 72025, 76938, 85828, 142475, 147574, 167894, 173659, 181297, 183654,201955, 208135, 229524, 237333, 238104, 242683, 247908])
+    classic = SongMeta.objects.filter(song_id__in=[186, 378, 667, 752, 1488, 1560, 2069, 2099, 2433, 2820, 2826, 2974, 4188, 4544, 5285, 6012, 6243,6296, 6445, 6522])
+    jazz = SongMeta.objects.filter(song_id__in=[453, 818, 902, 1000, 1199, 1238, 1295, 1646, 1828, 1965, 2060, 2110, 2526, 2556, 2617, 2767, 3218,3344, 3362, 3834])
 
-    # print(obj)
-    # id = 0
-    # song_id_list = [song_meta[idx[0]].song_id, song_meta[idx[1]].song_id]
-    # song_id = song_meta[id].song_id
-    # album_id = song_meta[id].album_id
-    # artist_id_basket = song_meta[id].artist_id_basket
-    # artist_name_basket = song_meta[id].artist_name_basket
-    # song_name = song_meta[id].song_name
-    # song_gn_gnr_basket = song_meta[id].song_gn_gnr_basket
-    # song_gn_dtl_gnr_basket = song_meta[id].song_gn_dtl_gnr_basket
-    # issue_date = song_meta[id].issue_date
-    # url_link = song_meta[id].url_link
-    # album_image = song_meta[id].album_image
-    #
-    # print(">>>>>>>>>>>>>>>>>>>>" , song_id_list)
-    print(">>>>>>>>>>>>>>>>>>>> idx ", len(idx))
-    # context = {'song_id': song_id_list, 'album_id' : album_id, 'artist_id_basket' : artist_id_basket,
-    #            'artist_name_basket' : artist_name_basket, 'song_name' : song_name, 'song_gn_gnr_basket' : song_gn_gnr_basket,
-    #            'song_gn_dtl_gnr_basket' : song_gn_dtl_gnr_basket, 'issue_date' : issue_date, 'url_link' : url_link,
-    #            'album_image' : album_image, 'song_meta' : song_meta, 'idx' : idx}
-    context = {'idx': idx}
+    context = {'balad': balad, 'dancing': dancing, 'hiphop': hiphop, 'rnb': rnb, 'indie': indie, 'rock': rock,
+               'pop': pop, 'ost': ost, 'idol': idol, 'edm': edm, 'musical': musical, 'classic': classic, 'jazz': jazz}
     return render(request, 'musicApp/genre.html', context)
 
 def filtering(request) :
@@ -102,38 +64,13 @@ def mypage(request) :
     return render(request, 'musicApp/mypage.html')
 
 def new_index(request) :
-    song_meta = SongMeta.objects.all()
-    # song = song_meta.filter(song_id = 0)
-    idx = []
-    for i, obj in enumerate(song_meta):
-        idx.append(obj)
-        if (i == 6):
-            break
+    pop = SongMeta.objects.filter(song_id__in=[109, 198, 255, 299, 307, 398, 420, 466, 501, 706, 787, 805, 846, 863, 961, 964, 972, 989, 1039, 1156])
+    hiphop = SongMeta.objects.filter(song_id__in=[47, 294, 304, 340, 598, 677, 1016, 1290, 1296, 1382, 1471, 1546, 1629, 1659, 1955, 2089, 2148,2214, 2242, 2472])
+    indie = SongMeta.objects.filter(song_id__in=[19, 47, 148, 229, 309, 363, 677, 788, 1209, 1220, 1232, 1255, 1262, 1632, 1666, 1740, 1856, 1937,2095, 2131])
 
-    print(obj)
-    # id = 0
-    # song_id_list = [song_meta[idx[0]].song_id, song_meta[idx[1]].song_id]
-    # song_id = song_meta[id].song_id
-    # album_id = song_meta[id].album_id
-    # artist_id_basket = song_meta[id].artist_id_basket
-    # artist_name_basket = song_meta[id].artist_name_basket
-    # song_name = song_meta[id].song_name
-    # song_gn_gnr_basket = song_meta[id].song_gn_gnr_basket
-    # song_gn_dtl_gnr_basket = song_meta[id].song_gn_dtl_gnr_basket
-    # issue_date = song_meta[id].issue_date
-    # url_link = song_meta[id].url_link
-    # album_image = song_meta[id].album_image
-    #
-    # print(">>>>>>>>>>>>>>>>>>>>" , song_id_list)
-    print(">>>>>>>>>>>>>>>>>>>> idx ", len(idx))
-    # context = {'song_id': song_id_list, 'album_id' : album_id, 'artist_id_basket' : artist_id_basket,
-    #            'artist_name_basket' : artist_name_basket, 'song_name' : song_name, 'song_gn_gnr_basket' : song_gn_gnr_basket,
-    #            'song_gn_dtl_gnr_basket' : song_gn_dtl_gnr_basket, 'issue_date' : issue_date, 'url_link' : url_link,
-    #            'album_image' : album_image, 'song_meta' : song_meta, 'idx' : idx}
-    context = {'idx': idx}
+    context = {'pop': pop, 'hiphop': hiphop, 'indie': indie}
     return render(request, 'musicApp/new_index.html', context)
 
-    # return render(request, 'musicApp/new_index.html')
 
 def playlist(request) :
     return render(request, 'musicApp/playlist.html')
