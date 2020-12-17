@@ -1573,6 +1573,7 @@ span.ovrly_text2 {
 .ms_genres_box:hover .ovrly_text_div {
 	bottom: 20px;
 }
+
 .ms_genres_box .ms_box_overlay_on {
 	position: absolute;
 	left: 0;
@@ -1581,13 +1582,14 @@ span.ovrly_text2 {
 	height: 100%;
 	top: 0;
 	border-radius: 10px;
-	background-image: -moz-linear-gradient( 90deg, rgb(20, 24, 42) 0%, rgb(237, 63, 179) 0%, rgb(52, 62, 105) 0%, rgba(32, 167, 196, 0) 100%);
-	background-image: -webkit-linear-gradient( 90deg, rgb(20, 24, 42) 0%, rgb(237, 63, 179) 0%, rgb(52, 62, 105) 0%, rgba(32, 167, 196, 0) 100%);
+    background-image: -moz-linear-gradient( 90deg, rgb(20, 24, 42) 0%, rgb(237, 63, 179) 0%, rgb(52, 62, 105) 0%, rgba(32, 167, 196, 0) 100%);
+	background-image: -webkit-linear-gradient( 90deg, rgb(20, 24, 42) 0%, rgb(237, 63, 179) 0%, rgb(52, 62, 105) 0%, rgba(32, 167, 196, 0) 0%);
 	background-image: -ms-linear-gradient( 90deg, rgb(20, 24, 42) 0%, rgb(237, 63, 179) 0%, rgb(52, 62, 105) 0%, rgba(32, 167, 196, 0) 100%);
 	transition: all 0.4s ease-in-out;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 }
+
 .ms_box_overlay_on .ovrly_text_div {
 	bottom: 20px;
 }
