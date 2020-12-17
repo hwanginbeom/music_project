@@ -153,6 +153,12 @@ label img {
         <div class="ms_content_wrapper padder_top80">
 
             <!---Header--->
+        <div class="ms_footer_wrapper" style="display:none;">
+            <div class="ms_footer_logo">
+                <a><img src="{% static 'images/open_logo.png' %}" alt=""></a>
+            </div>
+        </div>
+
             <div class="ms_header">
 
                 <div class="ms_top_right">
@@ -165,6 +171,13 @@ label img {
                     </div>
                 </div>
             </div>
+            <script>
+                $(function (){
+                    $(".ms_btn register_btn").click(function (){
+                    $(".ms_footer_wrapper").toggle();
+                  });
+                });
+            </script>
 
             <div class="ms_top_artist" style="margin-bottom: 40px">
                 <div class="container-fluid">
