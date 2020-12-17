@@ -59,14 +59,14 @@
     <script type='text/javascript'>
 
       //<![CDATA[
-        function sendLink() {
+        function sendLink(a,b,c,d) {
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '오마이걸 - 돌핀',
-        description: '#태그 - 신남 #꽤나 #많이 #오예 #쮓 #쒯',
+        title: a+'-'+b,
+        description: c,
         imageUrl:
-          'https://w.namu.la/s/28c572056eed4c270d5baa57d4e742792bab952bb183c3c6bce3bb6c1bdf60c24fda47e1f0048d921eb70619e9837490470ab069e5f663574b99c79b1bb6b61dd9959a923f961d3a332268f42d83d68b018866681ef68c4b313dda1f6208e4cabda893bef5217186f6a2743074068634',
+          d,
         link: {
           mobileWebUrl: 'http://127.0.0.1:8000/filtering',
           webUrl: 'http://127.0.0.1:8000/filtering',

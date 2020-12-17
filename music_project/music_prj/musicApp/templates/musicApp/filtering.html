@@ -172,10 +172,9 @@ label img {
                             </div>
                         </div>
 
-<<<<<<< HEAD
                         <ul>
-                            <form action="{%url 'test' %}" method="post">
-
+                            <form action="test" method="post">
+                        {% csrf_token %}
                         {% for obj in mood_change %}
                           <li>
                             <input type="checkbox" id="myCheckbox{{ forloop.counter }}" name="song_id[]" value="{{ obj.song_id }}"/>
@@ -184,17 +183,9 @@ label img {
                                    {{ obj.artist_name_basket }} - {{ obj.song_name }}</div>
                           </li>
                             {% endfor %}
-                                  <button type="submit">저장</button>
+                            <button type="submit">저장</button>
                         </form>
 
-=======
-                        <ul id='thisul'>
-                            <li>
-                                <input type="checkbox" />
-                                <label><img src="http://townandcountryremovals.com/wp-content/uploads/2013/10/firefox-logo-200x200.png" /></label>
-                                여기저기거기-범키
-                            </li>
->>>>>>> 9a7b3c28f0bc3c2baca6a13d7f551291cdae474e
                         </ul>
                     </div>
                 </div>
@@ -202,123 +193,7 @@ label img {
 
 
             <!----My Page Section Start---->
-            <div class="ms_free_download">
-                <div class="ms_heading">
-                    <h1 style="font-size:40px">Recommend playlist</h1>
-                </div>
-                <div class="album_inner_list">
-                   <div class="album_list_wrapper">
-                      <ul class="album_list_name">
-                         <li>#</li>
-                         <li>Song Title</li>
-                                <li></li>
-                         <li>Singer</li>
-                         <li class="text-center">Release Date</li>
-                         <li class="text-center">Play</li>
-                         <li class="text-center">share</li>
 
-                      </ul>
-                      <ul>
-                         <li><a>01</a><span class="play_hover"></span></li>
-                         <li><a>Bloodlust</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>02</a></li>
-                         <li><a>Desired Games</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>03</a></li>
-                         <li><a>Until I Met You</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>04</a></li>
-                         <li><a>Dark Alley Acoustic</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>05</a></li>
-                         <li><a>Cloud nine</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>06</a></li>
-                         <li><a>Walking Promises</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>07</a></li>
-                         <li><a>Endless Things</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>08</a></li>
-                         <li><a>Gimme Some Courage</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>09</a></li>
-                         <li><a>One More Stranger</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                      <ul>
-                         <li><a>10</a></li>
-                         <li><a>Cloud nine</a></li>
-                         <li></li>
-                         <li><a>Dream Your Moments</a></li>
-                         <li class="text-center"><a>5:26</a></li>
-                         <li class="text-center"><a class="bla-2" href="https://www.youtube.com/watch?v=mAMCKAq8Z98"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink()"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
-                      </ul>
-                   </div>
-                </div>
-            </div>
-            <div class="ms_top_right">
-                    <div class="ms_top_btn">
-<!--                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>Filter  <img src="{% static 'images/svg/search.svg' %}"  alt=""></span></a>-->
-                        <a id="kakao-link-btn" class="ms_btn register_btn" href="javascript:sendTextLink()"><span>All Share</span></a>
-                        <a class="ms_btn login_btn" href="javascript:sendTextLink()"><span>add playlist</span></a>
-                    </div>
-                </div>
         </div>
         <!----Footer Start---->
         <div class="ms_footer_wrapper">
@@ -378,24 +253,4 @@ label img {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;}
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-            $('#thisul').empty()
-            var txt = "";
-            for(var i = 0; i<100; i++){
-                txt += '<li>';
-                txt += '<input type="checkbox" id="myCheckbox'+(i+1)+'" />'
-                txt += '<label for="myCheckbox'+(i+1)+'">'
-                txt += '<img src="http://townandcountryremovals.com/wp-content/uploads/2013/10/firefox-logo-200x200.png" />'
-                txt += '</label>'
-                txt += '여기저기거기-범키'
-                txt +='</li>'
-            }
-         $('#thisul').append(txt)
-        })
-    </script>
-
 {% endblock %}

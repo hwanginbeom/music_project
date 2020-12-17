@@ -10,8 +10,10 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_auth.registration.views import SocialLoginView
 from allauth.socialaccount.providers.kakao import views as kakao_views
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+import ast
 
 from .models import *
+from .modeling import *
 # Create your views here.
 
 logger = getLogger(__name__)
@@ -80,19 +82,19 @@ def genre(request) :
 def filtering(request) :
     # song_meta = SongMeta.objects.values()
     if request.method == 'POST':
-        selected = request.POST.getlist('selected')
-        print("########################")
+        selected = request.POST.getlist('song_id[]')
+        print("#########84###############")
         print(selected)
-        print("########################")
+        print("wow")
+        print("###########87#############")
         return render(request, 'musicApp/mypage.html')
 
     # return redirect(...)
     mood_change = SongMeta.objects.filter(song_id__in=[135153, 569587, 365302, 676338, 177886, 328223, 145616, 529031, 104628, 457585, 601917, 270710, 264357, 672573, 418093, 145174, 352039, 704838, 562575, 260653, 296594, 339513, 548602, 548338, 700011, 83497, 196327, 636401, 486784, 681746, 443095, 420014, 241788, 341206, 439301, 374865, 506919, 5329])
+    # print(mood_change.values()[0]['artist_name_basket'][0])
+    # x = "['B-EXP', 'I-EXP', 'B-SUB', 'I-SUB', 'O', 'O']"
+
     array = []
-    for i in range(1,101):
-        a = "myCheckbox"+str(i)
-        array.append(a)
-    print(array)
     context = {'mood_change': mood_change, 'array': array}
     return render(request, 'musicApp/filtering.html', context)
 
@@ -162,7 +164,35 @@ def tag(request) :
 def test(request) :
     logger.info('USER_ID=%s', request.user.id)
     print(logger)
-    return render(request, 'musicApp/test.html', {'nav_id': 0})
+
+    if request.method == 'POST':
+        selected = request.POST.getlist('song_id[]')
+        with open('C:/Users/hwang in beom/Desktop/final/50000' + '/val2.json', encoding="utf-8") as f:
+            val2 = json.load(f)
+        val2[0]['songs'] = selected
+        # write_json(self.answers, 'results50000.json')
+        print(selected)
+        print("#########84###############")
+        print(val2)
+        print("wow")
+        print("###########87#############")
+        # FILE_PATH = './dataset'
+        render(request, 'musicApp/test.html')
+        U_space = PlaylistEmbedding('C:/Users/hwang in beom\Desktop/final/50000')
+        U_space.write_json(val2,'val2.json')
+        print("############179##############")
+        U_space.run()
+        print("############181##############")
+        print(U_space.answers[0]['songs'][0:10])
+        print("############183##############")
+        song_data = U_space.answers[0]['songs'][0:10]
+        select_song = SongMeta.objects.filter(
+            song_id__in=song_data)
+        context = {'select_song': select_song }
+
+        return render(request, 'musicApp/mypage.html', context)
+
+    return render(request, 'musicApp/test.html')
 
 
 # code 요청
