@@ -68,12 +68,68 @@ def new_index(request) :
     hiphop = SongMeta.objects.filter(song_id__in=[47, 294, 304, 340, 598, 677, 1016, 1290, 1296, 1382, 1471, 1546, 1629, 1659, 1955, 2089, 2148,2214, 2242, 2472])
     indie = SongMeta.objects.filter(song_id__in=[19, 47, 148, 229, 309, 363, 677, 788, 1209, 1220, 1232, 1255, 1262, 1632, 1666, 1740, 1856, 1937,2095, 2131])
 
-    context = {'pop': pop, 'hiphop': hiphop, 'indie': indie}
+    ply = Playlist.objects.filter(playlist_id__in=[93692, 58291, 17822, 31662, 143708, 131067, 114125, 46007, 24781, 10574, 149594, 126468])
+    context = {'pop': pop, 'hiphop': hiphop, 'indie': indie,
+               'ply' : ply}
     return render(request, 'musicApp/new_index.html', context)
 
 
 def playlist(request) :
-    return render(request, 'musicApp/playlist.html')
+    ply1_1 = SongMeta.objects.filter(song_id__in=[250, 619372, 293236, 579728, 513129])
+    ply1_2 = SongMeta.objects.filter(song_id__in=[102913, 162534, 357510, 684282, 566365])
+    ply1_3 = SongMeta.objects.filter(song_id__in=[255652, 465662, 638104, 629563, 46546])
+
+    ply2_1 = SongMeta.objects.filter(song_id__in=[327134, 321672, 311091, 378241, 479793])
+    ply2_2 = SongMeta.objects.filter(song_id__in=[88869, 31514, 320867, 93143, 483764])
+    ply2_3 = SongMeta.objects.filter(song_id__in=[319227, 346619, 138486, 704707, 343214])
+
+    ply3_1 = SongMeta.objects.filter(song_id__in=[296047, 182007, 511719, 327826, 216154])
+    ply3_2 = SongMeta.objects.filter(song_id__in=[361510, 541866, 401589, 250528, 348392])
+    ply3_3 = SongMeta.objects.filter(song_id__in=[663109, 305385, 83350, 279076, 179517])
+
+    ply4_1 = SongMeta.objects.filter(song_id__in=[565293, 614573, 162240, 335466, 479284])
+    ply4_2 = SongMeta.objects.filter(song_id__in=[166841, 154858, 689689, 200098, 107531])
+    ply4_3 = SongMeta.objects.filter(song_id__in=[568058, 86799, 668209, 294147, 259163])
+
+    ply5_1 = SongMeta.objects.filter(song_id__in=[463542, 434118, 195022, 521073, 592838])
+    ply5_2 = SongMeta.objects.filter(song_id__in=[599874, 469774, 613616, 157840, 181847])
+    ply5_3 = SongMeta.objects.filter(song_id__in=[358308, 503575, 520307, 153495, 61091])
+
+    ply6_1 = SongMeta.objects.filter(song_id__in=[204192, 108707, 657961, 596002, 579465])
+    ply6_2 = SongMeta.objects.filter(song_id__in=[325134, 184192, 700582, 653981, 14696])
+    ply6_3 = SongMeta.objects.filter(song_id__in=[467601, 679461, 429236, 106500, 391363])
+
+    ply7_1 = SongMeta.objects.filter(song_id__in=[390973, 685487, 545731, 244703, 55899])
+    ply7_2 = SongMeta.objects.filter(song_id__in=[492874, 254150, 112997, 412209, 292887])
+    ply7_3 = SongMeta.objects.filter(song_id__in=[282167, 17107, 58773, 694523, 238062])
+
+    ply8_1 = SongMeta.objects.filter(song_id__in=[283780, 278145, 463323, 280830, 97649])
+    ply8_2 = SongMeta.objects.filter(song_id__in=[505393, 83302, 680798, 369922, 152859])
+    ply8_3 = SongMeta.objects.filter(song_id__in=[377243, 356679, 549547, 373446, 505036])
+
+    ply9_1 = SongMeta.objects.filter(song_id__in=[32017, 693628, 683008, 495830, 619185])
+    ply9_2 = SongMeta.objects.filter(song_id__in=[309570, 255763, 142952, 519766, 604403])
+    ply9_3 = SongMeta.objects.filter(song_id__in=[506929, 648538, 46122, 548005, 369922])
+
+    ply10_1 = SongMeta.objects.filter(song_id__in=[95928, 280428, 470207, 95323, 150121])
+    ply10_2 = SongMeta.objects.filter(song_id__in=[329332, 434760, 68011, 43689, 302646])
+    ply10_3 = SongMeta.objects.filter(song_id__in=[37691, 421844, 638809, 325919, 140444])
+
+    ply11_1 = SongMeta.objects.filter(song_id__in=[477379, 477609, 148992, 482903, 392397])
+    ply11_2 = SongMeta.objects.filter(song_id__in=[701323, 645489, 355078, 72732, 536156])
+    ply11_3 = SongMeta.objects.filter(song_id__in=[655756, 422945, 425043, 624111, 669701])
+
+    ply12_1 = SongMeta.objects.filter(song_id__in=[674160, 267701, 541866, 703096, 403472])
+    ply12_2 = SongMeta.objects.filter(song_id__in=[246531, 259163, 519254, 372088, 228821])
+    ply12_3 = SongMeta.objects.filter(song_id__in=[220466, 43701, 314735, 285895, 10441])
+
+    context = {'ply1_1': ply1_1, 'ply1_2': ply1_2, 'ply1_3': ply1_3, 'ply2_1': ply2_1, 'ply2_2': ply2_2, 'ply2_3': ply2_3,
+               'ply3_1': ply3_1, 'ply3_2': ply3_2, 'ply3_3': ply3_3, 'ply4_1': ply4_1, 'ply4_2': ply4_2, 'ply4_3': ply4_3,
+               'ply5_1': ply5_1, 'ply5_2': ply5_2, 'ply5_3': ply5_3, 'ply6_1': ply6_1, 'ply6_2': ply6_2, 'ply6_3': ply6_3,
+               'ply7_1': ply7_1, 'ply7_2': ply7_2, 'ply7_3': ply7_3, 'ply8_1': ply8_1, 'ply8_2': ply8_2, 'ply8_3': ply8_3,
+               'ply9_1': ply9_1, 'ply9_2': ply9_2, 'ply9_3': ply9_3, 'ply10_1': ply10_1, 'ply10_2': ply10_2, 'ply10_3': ply10_3,
+               'ply11_1': ply11_1, 'ply11_2': ply11_2, 'ply11_3': ply11_3, 'ply12_1': ply12_1, 'ply12_2': ply12_2, 'ply12_3': ply12_3, }
+    return render(request, 'musicApp/playlist.html', context)
 
 def tag(request) :
     mood_change = SongMeta.objects.filter(song_id__in=[135153, 569587, 365302, 676338, 177886, 328223, 145616, 529031, 104628, 457585, 601917, 270710, 264357, 672573, 418093, 145174, 352039, 704838, 562575, 260653, 296594, 339513, 548602, 548338, 700011, 83497, 196327, 636401, 486784, 681746, 443095, 420014, 241788, 341206, 439301, 374865, 506919, 5329])
