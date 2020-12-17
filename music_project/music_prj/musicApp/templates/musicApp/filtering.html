@@ -65,7 +65,7 @@ label img {
 }
 </style>
 <body>
-
+    <form action="test" method="post">
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 	<!----Loader Start---->
@@ -149,7 +149,9 @@ label img {
             </div>
         </div>
         <!---Main Content Start--->
+
         <div class="ms_content_wrapper padder_top80">
+
             <!---Header--->
             <div class="ms_header">
 
@@ -157,7 +159,8 @@ label img {
 
                     <div class="ms_top_btn">
 <!--                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>Filter  <img src="{% static 'images/svg/search.svg' %}"  alt=""></span></a>-->
-                        <a href=filtering class="ms_btn register_btn"><span>Filter</span></a>
+                        <button type="submit" class="ms_btn register_btn" style="width: 216px;margin-bottom: 0px;border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;padding-right: 0px;padding-top: 0px;padding-left: 0px;padding-bottom: 0px;border-right-width: 0px;"><span>make playlist</span></button>
+
                         <!--<a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>-->
                     </div>
                 </div>
@@ -173,18 +176,25 @@ label img {
                         </div>
 
                         <ul>
-                            <form action="test" method="post">
                         {% csrf_token %}
                         {% for obj in mood_change %}
                           <li>
                             <input type="checkbox" id="myCheckbox{{ forloop.counter }}" name="song_id[]" value="{{ obj.song_id }}"/>
                               <label for="myCheckbox{{ forloop.counter }}"><img src="{{ obj.album_image }}" /></label>
                                <div class="txt_line" style=" width:240px; padding:0 5px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">
-                                   {{ obj.artist_name_basket }} - {{ obj.song_name }}</div>
+                                   {{ obj.artist_name_basket }} - {{ obj.song_name }}
+                               </div>
                           </li>
                             {% endfor %}
-                            <button type="submit">저장</button>
-                        </form>
+
+                                <!--<div class="ms_top_right" >-->
+                                    <!--<div class="ms_top_btn">-->
+                <!--&lt;!&ndash;                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>Filter  <img src="/static/images/svg/search.svg"  alt=""></span></a>&ndash;&gt;-->
+                                        <!--<button type="submit" class="ms_btn register_btn" style="width: 216px; height: 46px;  "><span>make playlist</span></button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+
 
                         </ul>
                     </div>
@@ -234,7 +244,7 @@ label img {
             </div>
         </div>
     </div>
-
+    </form>
 <!--scroll function-->
 
     <script>

@@ -119,13 +119,13 @@
                        {% for obj in select_song %}
                       {% if obj.song_name != None %}
                       <ul>
-                         <li><a>{{ forloop.counter }}</a><span class="play_hover"></span></li>
+                         <li><a style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">{{ forloop.counter }}</a><span class="play_hover"></span></li>
                          <li><a style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">{{ obj.song_name }}</a></li>
                          <li></li>
-                         <li><a>{{ obj.artist_name_basket }}</a></li>
-                         <li class="text-center"><a>{{ obj.issue_date }}</a></li>
-                         <li class="text-center"><a class="bla-2" href="{{ obj.url_link }}"><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink( '{{ obj.song_name }}' , '{{ obj.artist_name_basket }}','{{ obj.issue_date }}','{{ obj.album_image }}'  )"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
+                         <li><a style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">{{ obj.artist_name_basket }}</a></li>
+                         <li class="text-center"><a style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">{{ obj.issue_date }}</a></li>
+                         <li class="text-center"><a class="bla-2" href="{{ obj.url_link }}" style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;" ><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
+                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink( '{{ obj.song_name }}' , '{{ obj.artist_name_basket }}','{{ obj.issue_date }}','{{ obj.album_image }}'  )" style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
                       </ul>
                         {% else %}
                         {% endif %}
@@ -136,8 +136,7 @@
             <div class="ms_top_right">
                     <div class="ms_top_btn">
 <!--                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>Filter  <img src="{% static 'images/svg/search.svg' %}"  alt=""></span></a>-->
-                        <a id="kakao-link-btn" class="ms_btn register_btn" href="javascript:sendTextLink()"><span>All Share</span></a>
-                        <a class="ms_btn login_btn" href="javascript:sendTextLink()"><span>add playlist</span></a>
+                        <a id="kakao-link-btn" class="ms_btn register_btn" href="javascript:sendTextLink( '{{all_data}}' )"><span>All Share</span></a>
                     </div>
                 </div>
             </div>
@@ -147,7 +146,7 @@
         <!----Footer Start---->
         <div class="ms_footer_wrapper">
             <div class="ms_footer_logo">
-                <a class="kakao-link-btn"href="javascript:sendLink( 'a','b','c','d'  )"><img src="{% static 'images/open_logo.png' %}" alt=""></a>
+                <a><img src="{% static 'images/open_logo.png' %}" alt=""></a>
 
             </div>
         </div>

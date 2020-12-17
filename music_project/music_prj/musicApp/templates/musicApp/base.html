@@ -89,11 +89,11 @@
     })
   }
 
-  function sendTextLink() {
+  function sendTextLink(all_data) {
     Kakao.Link.sendDefault({
       objectType: 'text',
       text:
-        '1.오마이걸 - 돌핀, 2.오쮓 - 배고파,3.돈주남 - 가자,1.오마이걸 - 돌핀, 2.오쮓 - 배고파,3.돈주남 - 가자,1.오마이걸 - 돌핀, 2.오쮓 - 배고파,3.돈주남 - 가자,1.오마이걸 - 돌핀, 2.오쮓 - 배고파,3.돈주남 - 가자',
+        all_data,
       link: {
         mobileWebUrl:
           'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',

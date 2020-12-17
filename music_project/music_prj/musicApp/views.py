@@ -186,9 +186,16 @@ def test(request) :
         print(U_space.answers[0]['songs'][0:10])
         print("############183##############")
         song_data = U_space.answers[0]['songs'][0:10]
-        select_song = SongMeta.objects.filter(
-            song_id__in=song_data)
-        context = {'select_song': select_song }
+        select_song = SongMeta.objects.filter(song_id__in=song_data)
+        all_data = ''
+        for i in range(0,len(select_song.values())):
+            all_data += str(i+1) + '.' + select_song.values()[i]['song_name'] + ' - ' + select_song.values()[i]['artist_name_basket']
+            if i+1 == len(select_song.values()):
+                break
+            else:
+                all_data += ', '
+        print(all_data)
+        context = {'select_song': select_song, 'all_data' : all_data}
 
         return render(request, 'musicApp/mypage.html', context)
 
