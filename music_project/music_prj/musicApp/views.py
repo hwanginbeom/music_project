@@ -1,6 +1,8 @@
 import os
 import urllib
 from logging import getLogger
+import random
+
 
 import requests
 from allauth.account.views import login, logout
@@ -51,8 +53,7 @@ def filtering(request) :
         return render(request, 'musicApp/mypage.html')
 
     # return redirect(...)
-    song_meta = SongMeta.objects.filter(
-        song_id__in=[54, 62, 67, 210, 224, 250, 305, 463, 496, 523, 815, 861, 953, 1048, 1053, 1215, 1230, 1236, 1475,
+    song_list = [54, 62, 67, 210, 224, 250, 305, 463, 496, 523, 815, 861, 953, 1048, 1053, 1215, 1230, 1236, 1475,
                      1513, 195, 341, 642, 645, 682, 1255, 1313, 1463, 1814, 1816, 2224, 2726, 3220, 3511, 3724, 3727,
                      3920, 3934, 4213, 4491, 47, 294, 304, 340, 598, 677, 1016, 1290, 1296, 1382, 1471, 1546, 1629,
                      1659, 1955, 2089, 2148, 2214, 2242, 2472, 187, 289, 296, 309, 311, 347, 532, 864, 1182, 1236, 1580,
@@ -67,7 +68,11 @@ def filtering(request) :
                      147574, 167894, 173659, 181297, 183654, 201955, 208135, 229524, 237333, 238104, 242683, 247908,
                      186, 378, 667, 752, 1488, 1560, 2069, 2099, 2433, 2820, 2826, 2974, 4188, 4544, 5285, 6012, 6243,
                      6296, 6445, 6522, 453, 818, 902, 1000, 1199, 1238, 1295, 1646, 1828, 1965, 2060, 2110, 2526, 2556,
-                     2617, 2767, 3218, 3344, 3362, 3834])
+                     2617, 2767, 3218, 3344, 3362, 3834]
+    random.shuffle(song_list)
+    print(song_list)
+    song_meta = SongMeta.objects.filter(
+        song_id__in=song_list)
     # print(mood_change.values()[0]['artist_name_basket'][0])
     # x = "['B-EXP', 'I-EXP', 'B-SUB', 'I-SUB', 'O', 'O']"
 
