@@ -76,8 +76,8 @@ class PlaylistEmbedding:
             raise TypeError
 
         parent = os.path.dirname(fname)
-        distutils.dir_util.mkpath("C:/Users/hwang in beom\Desktop/final/50000/" + parent)
-        with io.open("C:/Users/hwang in beom\Desktop/final/50000/" + fname, "w", encoding="utf-8") as f:
+        distutils.dir_util.mkpath("C:/Users/hwang in beom/Desktop/final/50000/" + parent)
+        with io.open("C:/Users/hwang in beom/Desktop/final/50000/" + fname, "w", encoding="utf-8") as f:
             json_str = json.dumps(data, ensure_ascii=False, default=_conv)
             f.write(json_str)
 
@@ -105,15 +105,15 @@ class PlaylistEmbedding:
     def get_w2v(self, total, min_count, size, window, sg):
         try:
             print("get_w2v 실행")
-            if not (os.path.isfile("C:/Users/hwang in beom\Desktop/final/50000/w2v_model.model")):
+            if not (os.path.isfile("C:/Users/hwang in beom/Desktop/final/50000/w2v_model.model")):
                 print("get_w2v 모델 학습 시작")
                 # window가 210인 이유는 태그 10개와 곡 200개 꽉차있는 플레이리스트도 존재하기 때문이다. . iter는 반복횟수
                 w2v_model = Word2Vec(total, min_count=min_count, size=size, window=window, sg=sg, iter=25)
                 print("get_w2v 모델 학습 완료")
                 self.w2v_model = w2v_model
-                w2v_model.save("C:/Users/hwang in beom\Desktop/final/50000/w2v_model.model")
+                w2v_model.save("C:/Users/hwang in beom/Desktop/final/50000/w2v_model.model")
             print("w2v_model 모델 로드")
-            self.w2v_model = Word2Vec.load("C:/Users/hwang in beom\Desktop/final/50000/w2v_model.model")
+            self.w2v_model = Word2Vec.load("C:/Users/hwang in beom/Desktop/final/50000/w2v_model.model")
         except OSError as e:
             print("failed to create directory!")
             raise
@@ -237,14 +237,14 @@ class PlaylistEmbedding:
     def make_title_model(self, title_list_detach):
         try:
             print("make_title_model 실행")
-            if not (os.path.isfile("C:/Users/hwang in beom\Desktop/final/50000/FT_title_model.model")):
+            if not (os.path.isfile("C:/Users/hwang in beom/Desktop/final/50000/FT_title_model.model")):
                 print("make_title_model 모델 학습 시작")
                 FT_title_model = FT_gensim(title_list_detach, size=300, window=100, min_count=1, sg=1, iter=2000)
                 print("make_title_model2 모델 학습 완료")
                 self.FT_title_model = FT_title_model
-                FT_title_model.save("C:/Users/hwang in beom\Desktop/final/50000/FT_title_model.model")
+                FT_title_model.save("C:/Users/hwang in beom/Desktop/final/50000/FT_title_model.model")
             self.FT_title_model = FT_gensim.load(
-                "C:/Users/hwang in beom\Desktop/final/50000/FT_title_model.model")
+                "C:/Users/hwang in beom/Desktop/final/50000/FT_title_model.model")
             print("make_title_model 모델 로드됨")
         except OSError as e:
             print("failed to create directory!")

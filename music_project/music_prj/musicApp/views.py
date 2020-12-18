@@ -178,7 +178,7 @@ def mypage(request) :
 
     if request.method == 'POST':
         selected = request.POST.getlist('song_id[]')
-        with open('C:/Users/hwang in beom/Desktop/final/50000' + '/val2.json', encoding="utf-8") as f:
+        with open('C:/Users/user/Desktop/abc' + '/val2.json', encoding="utf-8") as f:
             val2 = json.load(f)
         val2[0]['songs'] = selected
         # write_json(self.answers, 'results50000.json')
@@ -189,7 +189,7 @@ def mypage(request) :
         print("###########87#############")
         # FILE_PATH = './dataset'
         render(request, 'musicApp/test.html')
-        U_space = PlaylistEmbedding('C:/Users/hwang in beom\Desktop/final/50000')
+        U_space = PlaylistEmbedding('C:/Users/user/Desktop/abc')
         U_space.write_json(val2,'val2.json')
         print("############179##############")
         U_space.run()
