@@ -24,6 +24,9 @@ logger = getLogger(__name__)
 def index(request) :
     return render(request, 'musicApp/index.html')
 
+def team(request) :
+    return render(request, 'musicApp/team.html')
+
 def genre(request) :
     balad = SongMeta.objects.filter(song_id__in=[54, 62, 67, 210, 224, 250, 305, 463, 496, 523, 815, 861, 953, 1048, 1053, 1215, 1230, 1236, 1475,1513])
     dancing = SongMeta.objects.filter(song_id__in=[195, 341, 642, 645, 682, 1255, 1313, 1463, 1814, 1816, 2224, 2726, 3220, 3511, 3724, 3727, 3920,3934, 4213, 4491])

@@ -30,6 +30,7 @@ urlpatterns = [
     path('playlist', views.playlist, name='playlist'),
     path('tag', views.tag, name='tag'),
     path('test', views.test, name='test'),
+    path('team', views.team, name='team'),
     path('registerProfile/', include('registerProfile.urls', namespace='registerProfile')),
 
     # 소셜 로그인
