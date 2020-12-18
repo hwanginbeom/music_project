@@ -67,7 +67,7 @@
 						<span class="nav_icon">
 							<span class="icon icon_fe_playlist"></span>
 						</span>
-						<span class="nav_text">Filtering</span>
+						<span class="nav_text">Recommend</span>
 						</a>
                         </li></ul>
 
@@ -76,15 +76,16 @@
 
                     <li><a href="mypage" class="active">
 						<span class="nav_icon">
-							<span class="icon icon_favourite"></span>
+							<span class="icon icon_c_playlist"></span>
 						</span>
-						<span class="nav_text">My page</span>
+						<span class="nav_text">REC Playlist</span>
 						</a>
                         </li></ul>
                 </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; height: 0px; top: 0px; display: block; max-height: 613px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
             </div>
         </div>
         <!---Main Content Start--->
+        <div class="ms_content_wrapper padder_top80">
         <div class="ms_content_wrapper padder_top80">
             <!---Header--->
             <div class="ms_header">
@@ -125,7 +126,7 @@
                          <li><a style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">{{ obj.artist_name_basket }}</a></li>
                          <li class="text-center"><a style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">{{ obj.issue_date }}</a></li>
                          <li class="text-center"><a class="bla-2" href="{{ obj.url_link }}" style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;" ><img src="{% static 'images/svg/play.svg' %}" width="20" /></a></li>
-                         <li class="text-center"><a class="kakao-link-btn"href="javascript:sendLink( '{{ obj.song_name }}' , '{{ obj.artist_name_basket }}','{{ obj.issue_date }}','{{ obj.album_image }}'  )" style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
+                         <li class="text-center"><a class="kakao-link-btn" href="javascript:sendLink( '{{ obj.song_name }}' , '{{ obj.artist_name_basket }}','{{ obj.issue_date }}','{{ obj.album_image }}'  )" style=" width:200px; padding:0 0px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;"><img src="{% static 'images/svg/share.svg' %}" width="20" alt=""></a></li>
                       </ul>
                         {% else %}
                         {% endif %}
@@ -140,10 +141,10 @@
                     </div>
                 </div>
             </div>
-            <!---Weekly Top 15--->
 
         </div>
         <!----Footer Start---->
+        <br><br><br>
         <div class="ms_footer_wrapper">
             <div class="ms_footer_logo">
                 <a><img src="{% static 'images/open_logo.png' %}" alt=""></a>
@@ -182,6 +183,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
