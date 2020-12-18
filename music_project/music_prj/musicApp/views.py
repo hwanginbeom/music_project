@@ -47,21 +47,34 @@ def filtering(request) :
         selected = request.POST.getlist('song_id[]')
         print("#########84###############")
         print(selected)
-        print("wow")
         print("###########87#############")
         return render(request, 'musicApp/mypage.html')
 
     # return redirect(...)
-    mood_change = SongMeta.objects.filter(song_id__in=[135153, 569587, 365302, 676338, 177886, 328223, 145616, 529031, 104628, 457585, 601917, 270710, 264357, 672573, 418093, 145174, 352039, 704838, 562575, 260653, 296594, 339513, 548602, 548338, 700011, 83497, 196327, 636401, 486784, 681746, 443095, 420014, 241788, 341206, 439301, 374865, 506919, 5329])
+    song_meta = SongMeta.objects.filter(
+        song_id__in=[54, 62, 67, 210, 224, 250, 305, 463, 496, 523, 815, 861, 953, 1048, 1053, 1215, 1230, 1236, 1475,
+                     1513, 195, 341, 642, 645, 682, 1255, 1313, 1463, 1814, 1816, 2224, 2726, 3220, 3511, 3724, 3727,
+                     3920, 3934, 4213, 4491, 47, 294, 304, 340, 598, 677, 1016, 1290, 1296, 1382, 1471, 1546, 1629,
+                     1659, 1955, 2089, 2148, 2214, 2242, 2472, 187, 289, 296, 309, 311, 347, 532, 864, 1182, 1236, 1580,
+                     1632, 1757, 1937, 1938, 2131, 2188, 2230, 2267, 2497, 19, 47, 148, 229, 309, 363, 677, 788, 1209,
+                     1220, 1232, 1255, 1262, 1632, 1666, 1740, 1856, 1937, 2095, 2131, 143, 148, 261, 440, 869, 889,
+                     949, 1220, 1262, 1508, 1854, 1954, 2431, 2479, 2955, 3202, 3418, 3488, 3514, 3572, 109, 198, 255,
+                     299, 307, 398, 420, 466, 501, 706, 787, 805, 846, 863, 961, 964, 972, 989, 1039, 1156, 32, 146,
+                     152, 353, 463, 632, 646, 671, 800, 1133, 1215, 1421, 2076, 2149, 2188, 2199, 2281, 2312, 2332,
+                     2559, 67, 642, 645, 682, 861, 889, 1230, 1313, 1814, 1914, 2188, 2224, 2479, 2512, 2726, 3724,
+                     3727, 3805, 3934, 4018, 14, 174, 397, 595, 699, 956, 1628, 1919, 1966, 2077, 2178, 2209, 3272,
+                     3289, 3499, 3520, 3550, 3751, 3874, 4241, 28590, 46726, 61591, 71702, 72025, 76938, 85828, 142475,
+                     147574, 167894, 173659, 181297, 183654, 201955, 208135, 229524, 237333, 238104, 242683, 247908,
+                     186, 378, 667, 752, 1488, 1560, 2069, 2099, 2433, 2820, 2826, 2974, 4188, 4544, 5285, 6012, 6243,
+                     6296, 6445, 6522, 453, 818, 902, 1000, 1199, 1238, 1295, 1646, 1828, 1965, 2060, 2110, 2526, 2556,
+                     2617, 2767, 3218, 3344, 3362, 3834])
     # print(mood_change.values()[0]['artist_name_basket'][0])
     # x = "['B-EXP', 'I-EXP', 'B-SUB', 'I-SUB', 'O', 'O']"
 
     array = []
-    context = {'mood_change': mood_change, 'array': array}
+    context = {'song_meta': song_meta}
     return render(request, 'musicApp/filtering.html', context)
 
-def mypage(request) :
-    return render(request, 'musicApp/mypage.html')
 
 def new_index(request) :
     pop = SongMeta.objects.filter(song_id__in=[109, 198, 255, 299, 307, 398, 420, 466, 501, 706, 787, 805, 846, 863, 961, 964, 972, 989, 1039, 1156])
@@ -154,7 +167,7 @@ def tag(request) :
                'healing':healing, 'dawn': dawn, 'cafe': cafe, 'ballade': ballade, 'store_music': store_music, 'exciting': exciting, 'drive': drive}
     return render(request, 'musicApp/tag.html', context)
 
-def test(request) :
+def mypage(request) :
     logger.info('USER_ID=%s', request.user.id)
     print(logger)
 
@@ -192,7 +205,11 @@ def test(request) :
 
         return render(request, 'musicApp/mypage.html', context)
 
+    return render(request, 'musicApp/mypage.html')
+
+def test(request) :
     return render(request, 'musicApp/test.html')
+
 
 
 # code 요청
