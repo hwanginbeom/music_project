@@ -97,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_project',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'Park3098!!',
         'HOST': 'localhost',
         'PORT': '3306',
 
