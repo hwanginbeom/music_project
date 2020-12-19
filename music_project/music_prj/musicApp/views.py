@@ -60,9 +60,11 @@ def filtering(request) :
     random.shuffle(song_list)
     random.shuffle(song_list)
     print(song_list)
+    tag_list = ["기분전환", "드라이브", "감성", "휴식", "잔잔한", "팝", "밤", "힐링", "새벽", "카페", "사랑", "발라드", "매장음악", "추억", "신나는", "여행", "스트레스", "Pop", "힙합", "설렘", "회상", "분위기", "알앤비", "겨울", "트렌디", "인디", "가을", "댄스", "재즈", "이별"]
     song_meta = SongMeta.objects.filter(song_id__in=song_list)
+    print(tag_list)
 
-    context = {'song_meta': song_meta}
+    context = {'song_meta': song_meta, 'tag_list':tag_list}
     return render(request, 'musicApp/filtering.html', context)
 
 
@@ -163,25 +165,15 @@ def mypage(request) :
 
     if request.method == 'POST':
         selected = request.POST.getlist('song_id[]')
-        with open('C:/Users/user/Desktop/abc' + '/val2.json', encoding="utf-8") as f:
+        with open('C:/Users/hwang in beom/Desktop/final/full' + '/val2.json', encoding="utf-8") as f:
             val2 = json.load(f)
         val2[0]['songs'] = selected
         # write_json(self.answers, 'results50000.json')
-        print(selected)
-        print("#########84###############")
-        print(val2)
-        print("wow")
-        print("###########87#############")
         # FILE_PATH = './dataset'
-        render(request, 'musicApp/test.html')
-        U_space = PlaylistEmbedding('C:/Users/user/Desktop/abc')
+        U_space = PlaylistEmbedding('C:/Users/hwang in beom/Desktop/final/full/')
         U_space.write_json(val2,'val2.json')
-        print("############179##############")
         U_space.run()
-        print("############181##############")
-        print(U_space.answers[0]['songs'][0:10])
-        print("############183##############")
-        song_data = U_space.answers[0]['songs'][0:10]
+        song_data = random.sample(U_space.answers[0]['songs'], 10)
         select_song = SongMeta.objects.filter(song_id__in=song_data)
         all_data = ''
         for i in range(0,len(select_song.values())):
@@ -190,7 +182,7 @@ def mypage(request) :
                 break
             else:
                 all_data += ', '
-        print(all_data)
+
         context = {'select_song': select_song, 'all_data' : all_data}
 
         return render(request, 'musicApp/mypage.html', context)

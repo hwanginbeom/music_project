@@ -233,11 +233,35 @@ label img {
             </script>
 
             <div class="ms_top_artist" style="margin-bottom: 40px">
+
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1 style="font-size:40px">Recommend</h1>
+                                <h1 style="font-size:40px">Top 30 tag</h1>
+                            </div>
+                        </div>
+
+                        <ul>
+                        {% csrf_token %}
+                        {% for obj in tag_list %}
+                          <li>
+                            <input type="checkbox" id="tag_list{{ forloop.counter }}" name="tag_list[]" value="{{ obj }}"/>
+                               <div class="txt_line" style=" width:240px; height:72px; padding:0 5px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">
+                                   #{{obj}}
+                               </div>
+                          </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ms_heading">
+                                <h1 style="font-size:40px">Song</h1>
                             </div>
                         </div>
 
@@ -252,16 +276,6 @@ label img {
                                </div>
                           </li>
                             {% endfor %}
-
-                                <!--<div class="ms_top_right" >-->
-                                    <!--<div class="ms_top_btn">-->
-                <!--&lt;!&ndash;                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>Filter  <img src="/static/images/svg/search.svg"  alt=""></span></a>&ndash;&gt;-->
-                                        <!--<button type="submit" class="ms_btn register_btn" style="width: 216px; height: 46px;  "><span>make playlist</span></button>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
-
-
                         </ul>
                     </div>
                 </div>
