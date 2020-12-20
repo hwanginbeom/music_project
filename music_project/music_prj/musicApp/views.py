@@ -164,10 +164,14 @@ def mypage(request) :
     print(logger)
 
     if request.method == 'POST':
-        selected = request.POST.getlist('song_id[]')
+        song_selected = request.POST.getlist('song_id[]')
+        tag_selected = request.POST.getlist('tag_id[]')
         with open('C:/Users/hwang in beom/Desktop/final/full' + '/val2.json', encoding="utf-8") as f:
             val2 = json.load(f)
-        val2[0]['songs'] = selected
+        val2[0]['songs'] = song_selected
+        print(song_selected)
+        val2[0]['tags'] = tag_selected
+        print(tag_selected)
         # write_json(self.answers, 'results50000.json')
         # FILE_PATH = './dataset'
         U_space = PlaylistEmbedding('C:/Users/hwang in beom/Desktop/final/full/')

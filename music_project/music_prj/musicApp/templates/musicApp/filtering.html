@@ -245,10 +245,10 @@ label img {
                         <ul>
                         {% csrf_token %}
                         {% for obj in tag_list %}
+
                           <li>
-                            <input type="checkbox" id="tag_list{{ forloop.counter }}" name="tag_list[]" value="{{ obj }}"/>
-                               <div class="txt_line" style=" width:240px; height:72px; padding:0 5px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">
-                                   #{{obj}}
+                              <label for="tag_list{{ forloop.counter }}" style="color=white">#{{obj}}<input type="checkbox" id="tag_list{{ forloop.counter }}" name="tag_id[]" value="{{ obj }}"/></label>
+                               <div class="txt_line" style=" width:150px; height:72px; padding:0 5px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">
                                </div>
                           </li>
                             {% endfor %}
