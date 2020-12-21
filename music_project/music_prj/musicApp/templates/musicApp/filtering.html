@@ -88,6 +88,122 @@ label img {
   color: #fff;
   z-index: 2;
 }
+
+
+.checkbox-container {
+
+position: relative;
+
+}
+
+input[type="checkbox"][id^="tag_list"] {
+  display: none;
+}
+
+// 기본 체크박스 없애기
+
+.checkbox-container input[type="checkbox"] {
+
+position: absolute;
+
+width: 1px;
+
+height: 1px;
+
+padding: 0;
+
+margin: -1px;
+
+overflow: hidden;
+
+clip:rect(0,0,0,0);
+
+border: 0
+
+}
+
+
+
+// 웹의 경우 커서에 pointer 설정
+
+.checkbox-container input[type="checkbox"] + label {
+
+display: inline-block;
+
+position: relative;
+
+cusor: pointer;
+
+-webkit-user-select: none;
+
+-moz-user-select: none;
+
+-ms-user-select: none;
+
+user-select: none;
+
+}
+
+
+
+// 새로운 디자인의 체크박스 만들기
+
+.checkbox-container input[type="checkbox"] + label:before {
+
+content: ' ';
+
+display: inline-block;
+
+width: 18px;
+
+height: 18px;
+
+line-height: 18px;
+
+margin: -2px 8px 0 0;
+
+text-align: center;
+
+vertical-align: middle;
+
+background: #fafafa;
+
+border: 1px solid #cacece;
+
+border-radius: 3px;
+
+box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+
+}
+
+
+
+.checkbox-container input[type="checkbox"] + label:active:before,
+
+.checkbox-container input[type="checkbox"]:checked + label:active:before {
+
+        box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+
+}
+
+
+
+.checkbox-container input[type="checkbox"]:checked + label:before {
+
+
+content: '\2713';
+
+color: #f8f9fa;
+background: #ff4865;
+border-color: #ff4865;
+text-shadow: 1px 1px white;
+
+
+
+box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+
+}
+
 </style>
 
 <body>
@@ -204,7 +320,6 @@ label img {
         <div class="ms_content_wrapper padder_top80">
         <div class="ms_content_wrapper padder_top80">
 
-
             <!---Header--->
         <div class="ms_footer_wrapper" style="display:none;">
             <div class="ms_footer_logo">
@@ -247,9 +362,11 @@ label img {
                         {% for obj in tag_list %}
 
                           <li>
-                              <label for="tag_list{{ forloop.counter }}" style="color=white">#{{obj}}<input type="checkbox" id="tag_list{{ forloop.counter }}" name="tag_id[]" value="{{ obj }}"/></label>
+                              <div class="checkbox-container">
+                              <input type="checkbox" id="tag_list{{ forloop.counter }}" name="tag_id[]" value="{{ obj }}"/><label for="tag_list{{ forloop.counter }}" style="color:white; font-size:20px;">#{{obj}}</label>
                                <div class="txt_line" style=" width:150px; height:72px; padding:0 5px;\overflow:hidden;\text-overflow:ellipsis;\white-space:nowrap;">
                                </div>
+                              </div>
                           </li>
                             {% endfor %}
 
